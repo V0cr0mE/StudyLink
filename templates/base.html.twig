@@ -4,14 +4,10 @@
 		<meta charset="UTF-8">
 		{% block stylesheets %}
 			<link rel="stylesheet" href="{{ asset('CSS/styles.css') }}">
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    		<link rel="stylesheet" href="{{ asset('CSS/posts.css') }}">
+			<link rel="stylesheet" href="{{ asset('CSS/posts.css') }}">
 			{% block head %}{% endblock %}
 		{% endblock %}
 
-		{% block javascripts %}
-			<script src="{{ asset('js/main.js') }}"></script>
-		{% endblock %}
 	</head>
 	<body>
 		<title>accueil</title>
@@ -36,23 +32,36 @@
 					<button class="notification-btn">
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell">
 							<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
-							<path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg> 
+							<path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
 					</button>
-					<a class="profile-btn" href="{# {{ path('app_conexion') }} #}">
-						<img src="https://assets.codepen.io/3306515/IMG_2025.jpg"/>
-					</a>
+
+					<div class="dropdown">
+						<a class="profile-btn" href="#" id="dropbtn">
+							<img src="https://assets.codepen.io/3306515/IMG_2025.jpg" alt="Profil"/>
+						</a>
+						<div class="dropdown-content">
+							<form action="/submit_login" method="POST">
+								<label  for="username">Username</label>
+								<input class="imputlogin" type="text" id="username" name="username" placeholder="Enter username" required>
+								<label for="password">Password</label>
+								<input class="imputlogin" type="password" id="password" name="password" placeholder="Enter password" required>
+								<button type="submit">Login</button>
+							</form>
+						</div>
+					</div>
 				</div>
 				<button class="messages-btn">
 					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle">
 						<path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
 				</button>
-				
-			</div>
-			
-		</div>
-		<div class="app-content">
-				{% block body %}{% endblock %}
-		</div>
 
-	</body>
-</html>
+			</div>
+
+		</div>
+		<div class="app-content"> {% block body %}{% endblock %}
+			</div>
+			{% block javascripts %}
+				<script src="{{ asset('./dropdown.js') }}"></script>
+			{% endblock %}
+		</body>
+	</html>

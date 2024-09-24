@@ -941,20 +941,54 @@ a {
     }
 }
 
-/* Ajoutez ce CSS à votre feuille de style existante */
-.calendar-container {
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 250px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 1;
+    position: absolute;
+    right: -75px;
+    width: 30vw;
+    padding: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Styling for the form inside the dropdown */
+.dropdown-content form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 16px;
+    justify-content: center;
 }
 
-.calendar-header {
-    text-align: center;
-    margin-bottom: 16px;
+.dropdown-content input[type="text"],
+.dropdown-content input[type="password"] {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-.calendar {
-    /* Ajoutez ici vos styles pour personnaliser l'apparence du calendrier */
-    /* Vous pouvez utiliser des tableaux, div, flexbox, etc. pour organiser le calendrier */
+.dropdown-content button {
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    right: 0%;
 }
+/* 
+.imputlogin{
+    max-width: 85%;
+} */

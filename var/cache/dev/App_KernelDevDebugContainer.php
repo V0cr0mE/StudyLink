@@ -16,7 +16,7 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerOAJaErX\App_KernelDevDebugContainer([
     'container.build_hash' => 'OAJaErX',
-    'container.build_id' => '9d1b2374',
-    'container.build_time' => 1727161951,
+    'container.build_id' => '9f3bc29f',
+    'container.build_time' => 1727172146,
     'container.runtime_mode' => \in_array(\PHP_SAPI, ['cli', 'phpdbg', 'embed'], true) ? 'web=0' : 'web=1',
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerOAJaErX');
