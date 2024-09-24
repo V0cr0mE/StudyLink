@@ -19,6 +19,7 @@
       <parameter key="DoctrineMigrationsBundle">Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle</parameter>
       <parameter key="TwigBundle">Symfony\Bundle\TwigBundle\TwigBundle</parameter>
       <parameter key="SecurityBundle">Symfony\Bundle\SecurityBundle\SecurityBundle</parameter>
+      <parameter key="NelmioApiDocBundle">Nelmio\ApiDocBundle\NelmioApiDocBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -44,6 +45,10 @@
       <parameter key="SecurityBundle" type="collection">
         <parameter key="path">C:\laragon\www\StudyLink\vendor\symfony\security-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\SecurityBundle</parameter>
+      </parameter>
+      <parameter key="NelmioApiDocBundle" type="collection">
+        <parameter key="path">C:\laragon\www\StudyLink\vendor\nelmio\api-doc-bundle</parameter>
+        <parameter key="namespace">Nelmio\ApiDocBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -181,6 +186,10 @@
       <parameter>main</parameter>
     </parameter>
     <parameter key="security.logout_uris" type="collection"/>
+    <parameter key="nelmio_api_doc.areas" type="collection">
+      <parameter>default</parameter>
+    </parameter>
+    <parameter key="nelmio_api_doc.use_validation_groups">false</parameter>
     <parameter key="console.command.ids" type="collection"/>
   </parameters>
   <services>
@@ -1677,10 +1686,10 @@
       <argument>C:\laragon\www\StudyLink/.env.dev.local</argument>
     </service>
     <service id="type_info.type_context_factory" class="Symfony\Component\TypeInfo\TypeContext\TypeContextFactory">
-      <argument>null</argument>
+      <argument type="service" id="type_info.resolver.string" on-invalid="null"/>
     </service>
     <service id="type_info.resolver" class="Symfony\Component\TypeInfo\TypeResolver\TypeResolver">
-      <argument type="service" id=".service_locator.PZ0UHmb"/>
+      <argument type="service" id=".service_locator.bvmE8RF"/>
     </service>
     <service id="type_info.resolver.reflection_type" class="Symfony\Component\TypeInfo\TypeResolver\ReflectionTypeResolver">
       <argument type="service" id="type_info.type_context_factory"/>
@@ -1697,6 +1706,7 @@
       <argument type="service" id="type_info.resolver.reflection_type"/>
       <argument type="service" id="type_info.type_context_factory"/>
     </service>
+    <service id="type_info.resolver.string" class="Symfony\Component\TypeInfo\TypeResolver\StringTypeResolver"/>
     <service id="property_info" class="Symfony\Component\PropertyInfo\PropertyInfoExtractor">
       <argument type="iterator">
         <argument type="service" id="property_info.reflection_extractor"/>
@@ -1704,9 +1714,13 @@
       </argument>
       <argument type="iterator">
         <argument type="service" id="doctrine.orm.default_entity_manager.property_info_extractor"/>
+        <argument type="service" id="property_info.phpstan_extractor"/>
+        <argument type="service" id="property_info.php_doc_extractor"/>
         <argument type="service" id="property_info.reflection_extractor"/>
       </argument>
-      <argument type="iterator"/>
+      <argument type="iterator">
+        <argument type="service" id="property_info.php_doc_extractor"/>
+      </argument>
       <argument type="iterator">
         <argument type="service" id="doctrine.orm.default_entity_manager.property_info_extractor"/>
         <argument type="service" id="property_info.reflection_extractor"/>
@@ -1720,6 +1734,13 @@
       <tag name="property_info.type_extractor" priority="-1002"/>
       <tag name="property_info.access_extractor" priority="-1000"/>
       <tag name="property_info.initializable_extractor" priority="-1000"/>
+    </service>
+    <service id="property_info.phpstan_extractor" class="Symfony\Component\PropertyInfo\Extractor\PhpStanExtractor">
+      <tag name="property_info.type_extractor" priority="-1000"/>
+    </service>
+    <service id="property_info.php_doc_extractor" class="Symfony\Component\PropertyInfo\Extractor\PhpDocExtractor">
+      <tag name="property_info.description_extractor" priority="-1000"/>
+      <tag name="property_info.type_extractor" priority="-1001"/>
     </service>
     <service id=".cache_connection.MfCypIA" class="Symfony\Component\Cache\Adapter\AbstractAdapter" constructor="createConnection">
       <argument>redis://localhost</argument>
@@ -2742,6 +2763,9 @@
       <call method="addExtension">
         <argument type="service" id="twig.extension.debug"/>
       </call>
+      <call method="addExtension">
+        <argument type="service" id="nelmio_api_doc.render_docs.html.asset"/>
+      </call>
       <call method="addGlobal">
         <argument>app</argument>
         <argument type="service" id="twig.app_variable"/>
@@ -2809,6 +2833,14 @@
       <call method="addPath">
         <argument>C:\laragon\www\StudyLink\vendor\symfony\security-bundle/Resources/views</argument>
         <argument>!Security</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\laragon\www\StudyLink\vendor\nelmio\api-doc-bundle/templates</argument>
+        <argument>NelmioApiDoc</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\laragon\www\StudyLink\vendor\nelmio\api-doc-bundle/templates</argument>
+        <argument>!NelmioApiDoc</argument>
       </call>
       <call method="addPath">
         <argument>C:\laragon\www\StudyLink/templates</argument>
@@ -3749,6 +3781,236 @@
         <argument>Hash a user password</argument>
       </call>
     </service>
+    <service id="nelmio_api_doc.command.dump" class="Nelmio\ApiDocBundle\Command\DumpCommand" public="true">
+      <tag name="console.command" command="nelmio:apidoc:dump"/>
+      <tag name="container.no_preload"/>
+      <argument type="service" id="nelmio_api_doc.render_docs"/>
+      <call method="setName">
+        <argument>nelmio:apidoc:dump</argument>
+      </call>
+    </service>
+    <service id="nelmio_api_doc.controller.swagger_ui" class="Nelmio\ApiDocBundle\Controller\SwaggerUiController" public="true">
+      <argument type="service" id="nelmio_api_doc.render_docs"/>
+      <argument>swaggerui</argument>
+    </service>
+    <service id="nelmio_api_doc.controller.redocly" class="Nelmio\ApiDocBundle\Controller\SwaggerUiController" public="true">
+      <argument type="service" id="nelmio_api_doc.render_docs"/>
+      <argument>redocly</argument>
+    </service>
+    <service id="nelmio_api_doc.controller.swagger_json" class="Nelmio\ApiDocBundle\Controller\DocumentationController" public="true">
+      <argument type="service" id="nelmio_api_doc.render_docs"/>
+    </service>
+    <service id="nelmio_api_doc.controller.swagger_yaml" class="Nelmio\ApiDocBundle\Controller\YamlDocumentationController" public="true">
+      <argument type="service" id="nelmio_api_doc.render_docs"/>
+    </service>
+    <service id="nelmio_api_doc.render_docs" class="Nelmio\ApiDocBundle\Render\RenderOpenApi" public="true">
+      <argument type="service" id="nelmio_api_doc.generator_locator"/>
+      <argument type="service" id="nelmio_api_doc.render_docs.json"/>
+      <argument type="service" id="nelmio_api_doc.render_docs.yaml"/>
+      <argument type="service" id="nelmio_api_doc.render_docs.html" on-invalid="ignore"/>
+    </service>
+    <service id="nelmio_api_doc.render_docs.html" class="Nelmio\ApiDocBundle\Render\Html\HtmlOpenApiRenderer">
+      <argument type="service" id="twig"/>
+      <argument type="collection">
+        <argument key="assets_mode">cdn</argument>
+        <argument key="swagger_ui_config" type="collection"/>
+        <argument key="redocly_config" type="collection"/>
+      </argument>
+    </service>
+    <service id="nelmio_api_doc.render_docs.html.asset" class="Nelmio\ApiDocBundle\Render\Html\GetNelmioAsset">
+      <tag name="twig.extension"/>
+      <argument type="service" id="twig.extension.assets"/>
+    </service>
+    <service id="nelmio_api_doc.render_docs.json" class="Nelmio\ApiDocBundle\Render\Json\JsonOpenApiRenderer"/>
+    <service id="nelmio_api_doc.render_docs.yaml" class="Nelmio\ApiDocBundle\Render\Yaml\YamlOpenApiRenderer"/>
+    <service id="nelmio_api_doc.controller_reflector" class="Nelmio\ApiDocBundle\Util\ControllerReflector">
+      <argument type="service" id="service_container"/>
+    </service>
+    <service id="nelmio_api_doc.describers.config" class="Nelmio\ApiDocBundle\Describer\ExternalDocDescriber">
+      <tag name="nelmio_api_doc.describer" priority="1000"/>
+      <tag name="nelmio_api_doc.describer.default" priority="1000"/>
+      <argument type="collection">
+        <argument key="info" type="collection">
+          <argument key="title">My App</argument>
+          <argument key="description">This is an awesome app!</argument>
+          <argument key="version">1.0.0</argument>
+        </argument>
+      </argument>
+    </service>
+    <service id="nelmio_api_doc.describers.default" class="Nelmio\ApiDocBundle\Describer\DefaultDescriber">
+      <tag name="nelmio_api_doc.describer" priority="-1000"/>
+      <tag name="nelmio_api_doc.describer.default" priority="-1000"/>
+    </service>
+    <service id="nelmio_api_doc.route_describers.route_metadata" class="Nelmio\ApiDocBundle\RouteDescriber\RouteMetadataDescriber">
+      <tag name="nelmio_api_doc.route_describer" priority="-300"/>
+    </service>
+    <service id="nelmio_api_doc.model_describers.self_describing" class="Nelmio\ApiDocBundle\ModelDescriber\SelfDescribingModelDescriber">
+      <tag name="nelmio_api_doc.model_describer" priority="1000"/>
+    </service>
+    <service id="nelmio_api_doc.model_describers.object" class="Nelmio\ApiDocBundle\ModelDescriber\ObjectModelDescriber">
+      <tag name="nelmio_api_doc.model_describer"/>
+      <argument type="service" id="property_info"/>
+      <argument>null</argument>
+      <argument type="service" id="nelmio_api_doc.object_model.property_describer"/>
+      <argument type="collection">
+        <argument>json</argument>
+      </argument>
+      <argument>null</argument>
+      <argument>false</argument>
+      <argument>null</argument>
+    </service>
+    <service id="nelmio_api_doc.model_describers.enum" class="Nelmio\ApiDocBundle\ModelDescriber\EnumModelDescriber">
+      <tag name="nelmio_api_doc.model_describer" priority="100"/>
+    </service>
+    <service id="nelmio_api_doc.object_model.property_describer" class="Nelmio\ApiDocBundle\PropertyDescriber\PropertyDescriber">
+      <tag name="nelmio_api_doc.object_model.property_describer" priority="100"/>
+      <argument type="tagged_iterator" tag="nelmio_api_doc.object_model.property_describer"/>
+    </service>
+    <service id="nelmio_api_doc.object_model.property_describers.array" class="Nelmio\ApiDocBundle\PropertyDescriber\ArrayPropertyDescriber">
+      <tag name="nelmio_api_doc.object_model.property_describer" priority="-1000"/>
+    </service>
+    <service id="nelmio_api_doc.object_model.property_describers.dictionary" class="Nelmio\ApiDocBundle\PropertyDescriber\DictionaryPropertyDescriber">
+      <tag name="nelmio_api_doc.object_model.property_describer" priority="-1000"/>
+    </service>
+    <service id="nelmio_api_doc.object_model.property_describers.boolean" class="Nelmio\ApiDocBundle\PropertyDescriber\BooleanPropertyDescriber">
+      <tag name="nelmio_api_doc.object_model.property_describer" priority="-1000"/>
+    </service>
+    <service id="nelmio_api_doc.object_model.property_describers.float" class="Nelmio\ApiDocBundle\PropertyDescriber\FloatPropertyDescriber">
+      <tag name="nelmio_api_doc.object_model.property_describer" priority="-1000"/>
+    </service>
+    <service id="nelmio_api_doc.object_model.property_describers.integer" class="Nelmio\ApiDocBundle\PropertyDescriber\IntegerPropertyDescriber">
+      <tag name="nelmio_api_doc.object_model.property_describer" priority="-1000"/>
+    </service>
+    <service id="nelmio_api_doc.object_model.property_describers.string" class="Nelmio\ApiDocBundle\PropertyDescriber\StringPropertyDescriber">
+      <tag name="nelmio_api_doc.object_model.property_describer" priority="-1000"/>
+    </service>
+    <service id="nelmio_api_doc.object_model.property_describers.date_time" class="Nelmio\ApiDocBundle\PropertyDescriber\DateTimePropertyDescriber">
+      <tag name="nelmio_api_doc.object_model.property_describer" priority="-1000"/>
+    </service>
+    <service id="nelmio_api_doc.object_model.property_describers.nullable" class="Nelmio\ApiDocBundle\PropertyDescriber\NullablePropertyDescriber">
+      <tag name="nelmio_api_doc.object_model.property_describer"/>
+    </service>
+    <service id="nelmio_api_doc.object_model.property_describers.required" class="Nelmio\ApiDocBundle\PropertyDescriber\RequiredPropertyDescriber">
+      <tag name="nelmio_api_doc.object_model.property_describer"/>
+    </service>
+    <service id="nelmio_api_doc.object_model.property_describers.object" class="Nelmio\ApiDocBundle\PropertyDescriber\ObjectPropertyDescriber">
+      <tag name="nelmio_api_doc.object_model.property_describer" priority="-1000"/>
+    </service>
+    <service id="nelmio_api_doc.object_model.property_describers.compound" class="Nelmio\ApiDocBundle\PropertyDescriber\CompoundPropertyDescriber">
+      <tag name="nelmio_api_doc.object_model.property_describer" priority="-1000"/>
+    </service>
+    <service id="nelmio_api_doc.form.documentation_extension" class="Nelmio\ApiDocBundle\Form\Extension\DocumentationExtension">
+      <tag name="form.type_extension" extended_type="Symfony\Component\Form\Extension\Core\Type\FormType" extended-type="Symfony\Component\Form\Extension\Core\Type\FormType"/>
+    </service>
+    <service id="nelmio_api_doc.swagger.processor.nullable_property" class="Nelmio\ApiDocBundle\Processor\NullablePropertyProcessor">
+      <tag name="nelmio_api_doc.swagger.processor"/>
+    </service>
+    <service id="nelmio_api_doc.open_api.generator" class="OpenApi\Generator">
+      <call method="addProcessor">
+        <argument type="service" id="nelmio_api_doc.swagger.processor.nullable_property"/>
+        <argument>null</argument>
+      </call>
+      <call method="addProcessor">
+        <argument type="service" id="nelmio_api_doc.swagger.processor.map_query_string"/>
+        <argument>null</argument>
+      </call>
+      <call method="addProcessor">
+        <argument type="service" id="nelmio_api_doc.swagger.processor.map_request_payload"/>
+        <argument>null</argument>
+      </call>
+    </service>
+    <service id="nelmio_api_doc.generator.default" class="Nelmio\ApiDocBundle\ApiDocGenerator" public="true">
+      <tag name="monolog.logger" channel="nelmio_api_doc"/>
+      <argument type="tagged_iterator" tag="nelmio_api_doc.describer.default"/>
+      <argument type="tagged_iterator" tag="nelmio_api_doc.model_describer"/>
+      <argument>null</argument>
+      <argument>openapi_doc.default</argument>
+      <argument type="service" id="nelmio_api_doc.open_api.generator"/>
+      <call method="setAlternativeNames">
+        <argument type="collection"/>
+      </call>
+      <call method="setMediaTypes">
+        <argument type="collection">
+          <argument>json</argument>
+        </argument>
+      </call>
+      <call method="setLogger">
+        <argument type="service" id="logger"/>
+      </call>
+      <call method="setOpenApiVersion">
+        <argument>null</argument>
+      </call>
+    </service>
+    <service id="nelmio_api_doc.describers.route.default" class="Nelmio\ApiDocBundle\Describer\RouteDescriber">
+      <tag name="nelmio_api_doc.describer.default" priority="-400"/>
+      <argument type="service" id="nelmio_api_doc.routes.default"/>
+      <argument type="service" id="nelmio_api_doc.controller_reflector"/>
+      <argument type="tagged_iterator" tag="nelmio_api_doc.route_describer"/>
+    </service>
+    <service id="nelmio_api_doc.describers.openapi_php.default" class="Nelmio\ApiDocBundle\Describer\OpenApiPhpDescriber">
+      <tag name="nelmio_api_doc.describer.default" priority="-200"/>
+      <argument type="service" id="nelmio_api_doc.routes.default"/>
+      <argument type="service" id="nelmio_api_doc.controller_reflector"/>
+      <argument>null</argument>
+      <argument type="service" id="logger"/>
+    </service>
+    <service id="nelmio_api_doc.describers.config.default" class="Nelmio\ApiDocBundle\Describer\ExternalDocDescriber">
+      <tag name="nelmio_api_doc.describer.default" priority="990"/>
+      <argument type="collection"/>
+      <argument>true</argument>
+    </service>
+    <service id="nelmio_api_doc.routes.default" class="Symfony\Component\Routing\RouteCollection">
+      <argument type="service">
+        <service class="Symfony\Component\Routing\RouteCollection">
+          <factory service="router.default" method="getRouteCollection"/>
+        </service>
+      </argument>
+      <factory method="filter">
+        <service class="Nelmio\ApiDocBundle\Routing\FilteredRouteCollectionBuilder">
+          <argument type="service" id="annotation_reader" on-invalid="null"/>
+          <argument type="service" id="nelmio_api_doc.controller_reflector"/>
+          <argument>default</argument>
+          <argument type="collection">
+            <argument key="path_patterns" type="collection">
+              <argument>^/api(?!/doc$)</argument>
+            </argument>
+            <argument key="host_patterns" type="collection"/>
+            <argument key="name_patterns" type="collection"/>
+            <argument key="with_annotation">false</argument>
+            <argument key="disable_default_routes">false</argument>
+          </argument>
+        </service>
+      </factory>
+    </service>
+    <service id="nelmio_api_doc.generator_locator" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="default" type="service_closure" id="nelmio_api_doc.generator.default"/>
+      </argument>
+    </service>
+    <service id="nelmio_api_doc.route_describers.php_doc" class="Nelmio\ApiDocBundle\RouteDescriber\PhpDocDescriber">
+      <tag name="nelmio_api_doc.route_describer" priority="-275"/>
+    </service>
+    <service id="nelmio_api_doc.route_describers.route_argument" class="Nelmio\ApiDocBundle\RouteDescriber\RouteArgumentDescriber">
+      <tag name="nelmio_api_doc.route_describer" priority="-225"/>
+      <argument type="service" id="argument_metadata_factory"/>
+      <argument type="tagged_iterator" tag="nelmio_api_doc.route_argument_describer"/>
+    </service>
+    <service id="nelmio_api_doc.route_argument_describer.map_query_string" class="Nelmio\ApiDocBundle\RouteDescriber\RouteArgumentDescriber\SymfonyMapQueryStringDescriber">
+      <tag name="nelmio_api_doc.route_argument_describer" priority="0"/>
+    </service>
+    <service id="nelmio_api_doc.swagger.processor.map_query_string" class="Nelmio\ApiDocBundle\Processor\MapQueryStringProcessor">
+      <tag name="nelmio_api_doc.swagger.processor" priority="0"/>
+    </service>
+    <service id="nelmio_api_doc.route_argument_describer.map_request_payload" class="Nelmio\ApiDocBundle\RouteDescriber\RouteArgumentDescriber\SymfonyMapRequestPayloadDescriber">
+      <tag name="nelmio_api_doc.route_argument_describer" priority="0"/>
+    </service>
+    <service id="nelmio_api_doc.swagger.processor.map_request_payload" class="Nelmio\ApiDocBundle\Processor\MapRequestPayloadProcessor">
+      <tag name="nelmio_api_doc.swagger.processor" priority="0"/>
+    </service>
+    <service id="nelmio_api_doc.route_argument_describer.map_query_parameter" class="Nelmio\ApiDocBundle\RouteDescriber\RouteArgumentDescriber\SymfonyMapQueryParameterDescriber">
+      <tag name="nelmio_api_doc.route_argument_describer" priority="0"/>
+    </service>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomePageController" class="App\Controller\HomePageController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomePageController" class="App\Controller\HomePageController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HomePageController" class="App\Controller\HomePageController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -4607,13 +4869,14 @@
         <argument key="security.route_loader.logout" type="service_closure" id="security.route_loader.logout"/>
       </argument>
     </service>
-    <service id=".service_locator.PZ0UHmb" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.bvmE8RF" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="ReflectionType" type="service_closure" id="type_info.resolver.reflection_type"/>
         <argument key="ReflectionParameter" type="service_closure" id="type_info.resolver.reflection_parameter"/>
         <argument key="ReflectionProperty" type="service_closure" id="type_info.resolver.reflection_property"/>
         <argument key="ReflectionFunctionAbstract" type="service_closure" id="type_info.resolver.reflection_return"/>
+        <argument key="string" type="service_closure" id="type_info.resolver.string"/>
       </argument>
     </service>
     <service id=".service_locator.zqtiJAI" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -5206,7 +5469,7 @@
     </service>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <tag name="container.no_preload"/>
-      <argument type="service" id=".service_locator.FJhp9FU"/>
+      <argument type="service" id=".service_locator.5DrBfKD"/>
       <argument type="collection">
         <argument key="about">console.command.about</argument>
         <argument key="assets:install">console.command.assets_install</argument>
@@ -5267,6 +5530,7 @@
         <argument key="lint:twig">twig.command.lint</argument>
         <argument key="debug:firewall">security.command.debug_firewall</argument>
         <argument key="security:hash-password">security.command.user_password_hash</argument>
+        <argument key="nelmio:apidoc:dump">nelmio_api_doc.command.dump</argument>
         <argument key="make:auth">maker.auto_command.make_auth</argument>
         <argument key="make:command">maker.auto_command.make_command</argument>
         <argument key="make:twig-component">maker.auto_command.make_twig_component</argument>
@@ -5299,7 +5563,7 @@
         <argument key="make:webhook">maker.auto_command.make_webhook</argument>
       </argument>
     </service>
-    <service id=".service_locator.FJhp9FU" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.5DrBfKD" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="console.command.about" type="service_closure" id=".console.command.about.lazy"/>
@@ -5361,6 +5625,7 @@
         <argument key="twig.command.lint" type="service_closure" id=".twig.command.lint.lazy"/>
         <argument key="security.command.debug_firewall" type="service_closure" id=".security.command.debug_firewall.lazy"/>
         <argument key="security.command.user_password_hash" type="service_closure" id=".security.command.user_password_hash.lazy"/>
+        <argument key="nelmio_api_doc.command.dump" type="service_closure" id="nelmio_api_doc.command.dump"/>
         <argument key="maker.auto_command.make_auth" type="service_closure" id=".maker.auto_command.make_auth.lazy"/>
         <argument key="maker.auto_command.make_command" type="service_closure" id=".maker.auto_command.make_command.lazy"/>
         <argument key="maker.auto_command.make_twig_component" type="service_closure" id=".maker.auto_command.make_twig_component.lazy"/>
@@ -5489,12 +5754,15 @@
     <service id="security.user_checker.main" alias="security.user_checker"/>
     <service id="security.firewall.context_locator" alias=".service_locator.bsoXAxw"/>
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker"/>
+    <service id="nelmio_api_doc.controller.swagger" alias="nelmio_api_doc.controller.swagger_json" public="true"/>
+    <service id="nelmio_api_doc.generator" alias="nelmio_api_doc.generator.default" public="true"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
     <service id="argument_resolver.controller_locator" alias=".service_locator.si0Br7u"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface" alias="logger"/>
+    <service id=".service_locator.OePSu7n" alias="nelmio_api_doc.generator_locator"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher" public="true"/>
     <service id="controller_resolver" alias="debug.controller_resolver"/>
     <service id="argument_resolver" alias="debug.argument_resolver"/>

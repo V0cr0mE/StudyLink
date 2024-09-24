@@ -22,6 +22,14 @@ class ComposerStaticInit8116c249f0b4dbcd995d077b53ca826b
     );
 
     public static $prefixLengthsPsr4 = array (
+        'p' => 
+        array (
+            'phpDocumentor\\Reflection\\' => 25,
+        ),
+        'W' => 
+        array (
+            'Webmozart\\Assert\\' => 17,
+        ),
         'T' => 
         array (
             'Twig\\' => 5,
@@ -53,6 +61,7 @@ class ComposerStaticInit8116c249f0b4dbcd995d077b53ca826b
             'Symfony\\Component\\PropertyAccess\\' => 33,
             'Symfony\\Component\\Process\\' => 26,
             'Symfony\\Component\\PasswordHasher\\' => 33,
+            'Symfony\\Component\\OptionsResolver\\' => 34,
             'Symfony\\Component\\HttpKernel\\' => 29,
             'Symfony\\Component\\HttpFoundation\\' => 33,
             'Symfony\\Component\\Finder\\' => 25,
@@ -81,6 +90,15 @@ class ComposerStaticInit8116c249f0b4dbcd995d077b53ca826b
             'Psr\\Clock\\' => 10,
             'Psr\\Cache\\' => 10,
             'PhpParser\\' => 10,
+            'PHPStan\\PhpDocParser\\' => 21,
+        ),
+        'O' => 
+        array (
+            'OpenApi\\' => 8,
+        ),
+        'N' => 
+        array (
+            'Nelmio\\ApiDocBundle\\' => 20,
         ),
         'D' => 
         array (
@@ -107,6 +125,16 @@ class ComposerStaticInit8116c249f0b4dbcd995d077b53ca826b
     );
 
     public static $prefixDirsPsr4 = array (
+        'phpDocumentor\\Reflection\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+        ),
+        'Webmozart\\Assert\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
         'Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
@@ -211,6 +239,10 @@ class ComposerStaticInit8116c249f0b4dbcd995d077b53ca826b
         array (
             0 => __DIR__ . '/..' . '/symfony/password-hasher',
         ),
+        'Symfony\\Component\\OptionsResolver\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/options-resolver',
+        ),
         'Symfony\\Component\\HttpKernel\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/http-kernel',
@@ -310,6 +342,18 @@ class ComposerStaticInit8116c249f0b4dbcd995d077b53ca826b
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
+        ),
+        'PHPStan\\PhpDocParser\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpstan/phpdoc-parser/src',
+        ),
+        'OpenApi\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zircote/swagger-php/src',
+        ),
+        'Nelmio\\ApiDocBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nelmio/api-doc-bundle/src',
         ),
         'Doctrine\\SqlFormatter\\' => 
         array (
