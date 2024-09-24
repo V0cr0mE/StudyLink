@@ -1,0 +1,130 @@
+/* Styles pour les posts dans le bloc body */
+.grid--cell {
+    margin: 20px;
+    max-width: 300px; /* Limite la largeur des articles */
+}
+
+.grid--item {
+    background-color: #f9f9f9; /* Fond clair pour les articles */
+    border: 1px solid #ddd; /* Bordure légère */
+    border-radius: 8px; /* Coins arrondis */
+    overflow: hidden; /* Évite le débordement */
+    transition: box-shadow 0.3s ease; /* Animation pour l'ombre au survol */
+}
+
+.grid--item:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Ombre au survol */
+}
+
+.preview--container {
+    position: relative;
+    overflow: hidden;
+}
+
+.preview-image--container {
+    display: block;
+}
+
+.preview-image {
+    background-image: url('https://via.placeholder.com/300'); /* Image de prévisualisation par défaut */
+    background-size: cover; /* Remplit le conteneur */
+    height: 200px; /* Hauteur fixe pour l'image */
+    transition: transform 0.3s ease; /* Animation pour le zoom */
+}
+
+.preview-image--container:hover .preview-image {
+    transform: scale(1.05); /* Zoom au survol */
+}
+
+.meta--container {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between; /* Équilibre les éléments */
+}
+
+.issue,
+.page {
+    color: #007bff; /* Couleur des liens */
+    text-decoration: none; /* Supprime le soulignement */
+    font-weight: bold; /* Gras */
+}
+
+.issue:hover,
+.page:hover {
+    text-decoration: underline; /* Soulignement au survol */
+}
+
+.title--container {
+    padding: 10px;
+}
+
+.title--text {
+    font-size: 1.2em; /* Taille de police plus grande */
+    color: #333; /* Couleur du texte */
+    text-decoration: none; /* Supprime le soulignement */
+}
+
+.title--text:hover {
+    color: #007bff; /* Couleur au survol */
+}
+
+.tags--overflow-container {
+    padding: 10px;
+}
+
+.tags--container {
+    list-style: none; /* Supprime les puces de la liste */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Affiche les tags en ligne */
+    flex-wrap: wrap; /* Permet le retour à la ligne */
+}
+
+.tag {
+    background-color: #e7e7e7; /* Fond des tags */
+    border-radius: 15px; /* Coins arrondis */
+    padding: 5px 10px; /* Padding pour les tags */
+    margin-right: 5px; /* Espacement entre les tags */
+    text-decoration: none; /* Supprime le soulignement */
+    color: #333; /* Couleur du texte des tags */
+}
+
+.tag:hover {
+    background-color: #007bff; /* Couleur au survol */
+    color: white; /* Texte blanc au survol */
+}
+
+.hover--options {
+    display: flex; /* Affiche les boutons en ligne */
+    justify-content: space-between; /* Équilibre les boutons */
+    padding: 10px;
+}
+
+.button {
+    background-color: #007bff; /* Fond des boutons */
+    color: white; /* Couleur du texte des boutons */
+    padding: 10px 15px; /* Padding pour les boutons */
+    border-radius: 5px; /* Coins arrondis pour les boutons */
+    text-decoration: none; /* Supprime le soulignement */
+    display: flex; /* Affiche les icônes et le texte en ligne */
+    align-items: center; /* Aligne verticalement */
+    transition: background-color 0.3s ease; /* Animation pour le fond */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Couleur au survol des boutons */
+}
+
+.icon-title {
+    margin-right: 5px; /* Espacement entre l'icône et le texte */
+}
+
+.new-tab {
+    margin-left: 5px; /* Espacement entre le texte et l'icône */
+}
+
+.card-container{
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+}
