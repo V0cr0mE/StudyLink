@@ -10,6 +10,7 @@ if (in_array(PHP_SAPI, ['cli', 'phpdbg', 'embed'], true)) {
 }
 
 require dirname(__DIR__, 3).''.\DIRECTORY_SEPARATOR.'vendor/autoload.php';
+<<<<<<< HEAD
 (require __DIR__.'/App_KernelDevDebugContainer.php')->set(\ContainerVvQb782\App_KernelDevDebugContainer::class, null);
 require __DIR__.'/ContainerVvQb782/EntityManagerGhost614a58f.php';
 require __DIR__.'/ContainerVvQb782/RequestPayloadValueResolverGhost01ca9cc.php';
@@ -149,6 +150,153 @@ require __DIR__.'/ContainerVvQb782/get_Debug_ValueResolver_ArgumentResolver_Date
 require __DIR__.'/ContainerVvQb782/get_Debug_ValueResolver_ArgumentResolver_BackedEnumResolverService.php';
 require __DIR__.'/ContainerVvQb782/get_Debug_Security_Voter_Security_Access_SimpleRoleVoterService.php';
 require __DIR__.'/ContainerVvQb782/get_Debug_Security_Voter_Security_Access_AuthenticatedVoterService.php';
+=======
+(require __DIR__.'/App_KernelDevDebugContainer.php')->set(\ContainerTIxXbQa\App_KernelDevDebugContainer::class, null);
+require __DIR__.'/ContainerTIxXbQa/EntityManagerGhost614a58f.php';
+require __DIR__.'/ContainerTIxXbQa/RequestPayloadValueResolverGhost01ca9cc.php';
+require __DIR__.'/ContainerTIxXbQa/getValidator_WhenService.php';
+require __DIR__.'/ContainerTIxXbQa/getValidator_NotCompromisedPasswordService.php';
+require __DIR__.'/ContainerTIxXbQa/getValidator_NoSuspiciousCharactersService.php';
+require __DIR__.'/ContainerTIxXbQa/getValidator_ExpressionService.php';
+require __DIR__.'/ContainerTIxXbQa/getValidator_EmailService.php';
+require __DIR__.'/ContainerTIxXbQa/getValidator_BuilderService.php';
+require __DIR__.'/ContainerTIxXbQa/getValidatorService.php';
+require __DIR__.'/ContainerTIxXbQa/getTwig_Runtime_SecurityCsrfService.php';
+require __DIR__.'/ContainerTIxXbQa/getTwig_Runtime_HttpkernelService.php';
+require __DIR__.'/ContainerTIxXbQa/getTwig_Mailer_MessageListenerService.php';
+require __DIR__.'/ContainerTIxXbQa/getTwig_Form_RendererService.php';
+require __DIR__.'/ContainerTIxXbQa/getTwig_Form_EngineService.php';
+require __DIR__.'/ContainerTIxXbQa/getTwigService.php';
+require __DIR__.'/ContainerTIxXbQa/getSession_Handler_NativeService.php';
+require __DIR__.'/ContainerTIxXbQa/getSession_FactoryService.php';
+require __DIR__.'/ContainerTIxXbQa/getServicesResetterService.php';
+require __DIR__.'/ContainerTIxXbQa/getSecurity_Validator_UserPasswordService.php';
+require __DIR__.'/ContainerTIxXbQa/getSecurity_UserPasswordHasherService.php';
+require __DIR__.'/ContainerTIxXbQa/getSecurity_User_Provider_Concrete_AppUserProviderService.php';
+require __DIR__.'/ContainerTIxXbQa/getSecurity_RouteLoader_LogoutService.php';
+require __DIR__.'/ContainerTIxXbQa/getSecurity_PasswordHasherFactoryService.php';
+require __DIR__.'/ContainerTIxXbQa/getSecurity_Logout_Listener_Default_MainService.php';
+require __DIR__.'/ContainerTIxXbQa/getSecurity_Logout_Listener_CsrfTokenClearingService.php';
+require __DIR__.'/ContainerTIxXbQa/getSecurity_Listener_UserProviderService.php';
+require __DIR__.'/ContainerTIxXbQa/getSecurity_Listener_UserChecker_MainService.php';
+require __DIR__.'/ContainerTIxXbQa/getSecurity_Listener_Session_MainService.php';
+require __DIR__.'/ContainerTIxXbQa/getSecurity_Listener_RememberMe_MainService.php';
+require __DIR__.'/ContainerTIxXbQa/getSecurity_Listener_PasswordMigratingService.php';
+require __DIR__.'/ContainerTIxXbQa/getSecurity_Listener_Main_UserProviderService.php';
+require __DIR__.'/ContainerTIxXbQa/getSecurity_Listener_CsrfProtectionService.php';
+require __DIR__.'/ContainerTIxXbQa/getSecurity_Listener_CheckRememberMeConditions_MainService.php';
+require __DIR__.'/ContainerTIxXbQa/getSecurity_Listener_CheckAuthenticatorCredentialsService.php';
+require __DIR__.'/ContainerTIxXbQa/getSecurity_HttpUtilsService.php';
+require __DIR__.'/ContainerTIxXbQa/getSecurity_Firewall_Map_Context_MainService.php';
+require __DIR__.'/ContainerTIxXbQa/getSecurity_Firewall_Map_Context_DevService.php';
+require __DIR__.'/ContainerTIxXbQa/getSecurity_ChannelListenerService.php';
+require __DIR__.'/ContainerTIxXbQa/getSecurity_Authenticator_RememberMeHandler_MainService.php';
+require __DIR__.'/ContainerTIxXbQa/getSecurity_Authenticator_RememberMe_MainService.php';
+require __DIR__.'/ContainerTIxXbQa/getSecurity_AccessListenerService.php';
+require __DIR__.'/ContainerTIxXbQa/getSecrets_VaultService.php';
+require __DIR__.'/ContainerTIxXbQa/getSecrets_EnvVarLoaderService.php';
+require __DIR__.'/ContainerTIxXbQa/getRouting_LoaderService.php';
+require __DIR__.'/ContainerTIxXbQa/getPropertyInfoService.php';
+require __DIR__.'/ContainerTIxXbQa/getPropertyAccessorService.php';
+require __DIR__.'/ContainerTIxXbQa/getNelmioApiDoc_Routes_DefaultService.php';
+require __DIR__.'/ContainerTIxXbQa/getNelmioApiDoc_RouteDescribers_RouteArgumentService.php';
+require __DIR__.'/ContainerTIxXbQa/getNelmioApiDoc_RenderDocsService.php';
+require __DIR__.'/ContainerTIxXbQa/getNelmioApiDoc_ModelDescribers_ObjectService.php';
+require __DIR__.'/ContainerTIxXbQa/getNelmioApiDoc_ModelDescribers_FormService.php';
+require __DIR__.'/ContainerTIxXbQa/getNelmioApiDoc_Generator_DefaultService.php';
+require __DIR__.'/ContainerTIxXbQa/getNelmioApiDoc_Describers_Route_DefaultService.php';
+require __DIR__.'/ContainerTIxXbQa/getNelmioApiDoc_Describers_OpenapiPhp_DefaultService.php';
+require __DIR__.'/ContainerTIxXbQa/getNelmioApiDoc_Describers_ConfigService.php';
+require __DIR__.'/ContainerTIxXbQa/getNelmioApiDoc_Controller_SwaggerYamlService.php';
+require __DIR__.'/ContainerTIxXbQa/getNelmioApiDoc_Controller_SwaggerUiService.php';
+require __DIR__.'/ContainerTIxXbQa/getNelmioApiDoc_Controller_SwaggerJsonService.php';
+require __DIR__.'/ContainerTIxXbQa/getNelmioApiDoc_Controller_RedoclyService.php';
+require __DIR__.'/ContainerTIxXbQa/getMailer_TransportsService.php';
+require __DIR__.'/ContainerTIxXbQa/getMailer_TransportFactory_SmtpService.php';
+require __DIR__.'/ContainerTIxXbQa/getMailer_TransportFactory_SendmailService.php';
+require __DIR__.'/ContainerTIxXbQa/getMailer_TransportFactory_NullService.php';
+require __DIR__.'/ContainerTIxXbQa/getMailer_TransportFactory_NativeService.php';
+require __DIR__.'/ContainerTIxXbQa/getFragment_Renderer_InlineService.php';
+require __DIR__.'/ContainerTIxXbQa/getForm_TypeGuesser_ValidatorService.php';
+require __DIR__.'/ContainerTIxXbQa/getForm_TypeGuesser_DoctrineService.php';
+require __DIR__.'/ContainerTIxXbQa/getForm_TypeExtension_Password_PasswordHasherService.php';
+require __DIR__.'/ContainerTIxXbQa/getForm_TypeExtension_Form_ValidatorService.php';
+require __DIR__.'/ContainerTIxXbQa/getForm_TypeExtension_Form_PasswordHasherService.php';
+require __DIR__.'/ContainerTIxXbQa/getForm_TypeExtension_Form_HttpFoundationService.php';
+require __DIR__.'/ContainerTIxXbQa/getForm_TypeExtension_CsrfService.php';
+require __DIR__.'/ContainerTIxXbQa/getForm_Type_FormService.php';
+require __DIR__.'/ContainerTIxXbQa/getForm_Type_FileService.php';
+require __DIR__.'/ContainerTIxXbQa/getForm_Type_EntityService.php';
+require __DIR__.'/ContainerTIxXbQa/getForm_Type_ColorService.php';
+require __DIR__.'/ContainerTIxXbQa/getForm_Type_ChoiceService.php';
+require __DIR__.'/ContainerTIxXbQa/getForm_ServerParamsService.php';
+require __DIR__.'/ContainerTIxXbQa/getForm_RegistryService.php';
+require __DIR__.'/ContainerTIxXbQa/getForm_Listener_PasswordHasherService.php';
+require __DIR__.'/ContainerTIxXbQa/getForm_FactoryService.php';
+require __DIR__.'/ContainerTIxXbQa/getForm_ChoiceListFactory_CachedService.php';
+require __DIR__.'/ContainerTIxXbQa/getErrorControllerService.php';
+require __DIR__.'/ContainerTIxXbQa/getDoctrine_UuidGeneratorService.php';
+require __DIR__.'/ContainerTIxXbQa/getDoctrine_UlidGeneratorService.php';
+require __DIR__.'/ContainerTIxXbQa/getDoctrine_Orm_Validator_UniqueService.php';
+require __DIR__.'/ContainerTIxXbQa/getDoctrine_Orm_Listeners_PdoSessionHandlerSchemaListenerService.php';
+require __DIR__.'/ContainerTIxXbQa/getDoctrine_Orm_Listeners_LockStoreSchemaListenerService.php';
+require __DIR__.'/ContainerTIxXbQa/getDoctrine_Orm_Listeners_DoctrineTokenProviderSchemaListenerService.php';
+require __DIR__.'/ContainerTIxXbQa/getDoctrine_Orm_Listeners_DoctrineDbalCacheAdapterSchemaListenerService.php';
+require __DIR__.'/ContainerTIxXbQa/getDoctrine_Orm_DefaultListeners_AttachEntityListenersService.php';
+require __DIR__.'/ContainerTIxXbQa/getDoctrine_Orm_DefaultEntityManager_PropertyInfoExtractorService.php';
+require __DIR__.'/ContainerTIxXbQa/getDoctrine_Orm_DefaultEntityManagerService.php';
+require __DIR__.'/ContainerTIxXbQa/getDoctrine_Dbal_DefaultConnection_EventManagerService.php';
+require __DIR__.'/ContainerTIxXbQa/getDoctrine_Dbal_DefaultConnectionService.php';
+require __DIR__.'/ContainerTIxXbQa/getDoctrineService.php';
+require __DIR__.'/ContainerTIxXbQa/getDebug_Security_Voter_VoteListenerService.php';
+require __DIR__.'/ContainerTIxXbQa/getDebug_Security_Firewall_Authenticator_MainService.php';
+require __DIR__.'/ContainerTIxXbQa/getDebug_ErrorHandlerConfiguratorService.php';
+require __DIR__.'/ContainerTIxXbQa/getController_TemplateAttributeListenerService.php';
+require __DIR__.'/ContainerTIxXbQa/getContainer_GetRoutingConditionServiceService.php';
+require __DIR__.'/ContainerTIxXbQa/getContainer_EnvVarProcessorsLocatorService.php';
+require __DIR__.'/ContainerTIxXbQa/getContainer_EnvVarProcessorService.php';
+require __DIR__.'/ContainerTIxXbQa/getCache_ValidatorExpressionLanguageService.php';
+require __DIR__.'/ContainerTIxXbQa/getCache_SystemClearerService.php';
+require __DIR__.'/ContainerTIxXbQa/getCache_SystemService.php';
+require __DIR__.'/ContainerTIxXbQa/getCache_SecurityIsGrantedAttributeExpressionLanguageService.php';
+require __DIR__.'/ContainerTIxXbQa/getCache_SecurityIsCsrfTokenValidAttributeExpressionLanguageService.php';
+require __DIR__.'/ContainerTIxXbQa/getCache_GlobalClearerService.php';
+require __DIR__.'/ContainerTIxXbQa/getCache_AppClearerService.php';
+require __DIR__.'/ContainerTIxXbQa/getCache_AppService.php';
+require __DIR__.'/ContainerTIxXbQa/getTemplateControllerService.php';
+require __DIR__.'/ContainerTIxXbQa/getRedirectControllerService.php';
+require __DIR__.'/ContainerTIxXbQa/getAppCustomAuthenticatorService.php';
+require __DIR__.'/ContainerTIxXbQa/getUserRepositoryService.php';
+require __DIR__.'/ContainerTIxXbQa/getPostRepositoryService.php';
+require __DIR__.'/ContainerTIxXbQa/getParticipationRepositoryService.php';
+require __DIR__.'/ContainerTIxXbQa/getCommentRepositoryService.php';
+require __DIR__.'/ContainerTIxXbQa/getRegistrationFormTypeService.php';
+require __DIR__.'/ContainerTIxXbQa/getRegistrationControllerService.php';
+require __DIR__.'/ContainerTIxXbQa/getHomePageControllerService.php';
+require __DIR__.'/ContainerTIxXbQa/get_ServiceLocator_QaaoWjxService.php';
+require __DIR__.'/ContainerTIxXbQa/getRegistrationControllerregisterService.php';
+require __DIR__.'/ContainerTIxXbQa/get_ServiceLocator_B3ojDwcService.php';
+require __DIR__.'/ContainerTIxXbQa/get_ServiceLocator_4wc4Ag1_KernelregisterContainerConfigurationService.php';
+require __DIR__.'/ContainerTIxXbQa/get_ServiceLocator_4wc4Ag1_KernelloadRoutesService.php';
+require __DIR__.'/ContainerTIxXbQa/get_ServiceLocator_4wc4Ag1Service.php';
+require __DIR__.'/ContainerTIxXbQa/get_Security_RequestMatcher_GOpgIHxService.php';
+require __DIR__.'/ContainerTIxXbQa/get_Debug_ValueResolver_Security_UserValueResolverService.php';
+require __DIR__.'/ContainerTIxXbQa/get_Debug_ValueResolver_Security_SecurityTokenValueResolverService.php';
+require __DIR__.'/ContainerTIxXbQa/get_Debug_ValueResolver_Doctrine_Orm_EntityValueResolverService.php';
+require __DIR__.'/ContainerTIxXbQa/get_Debug_ValueResolver_ArgumentResolver_VariadicService.php';
+require __DIR__.'/ContainerTIxXbQa/get_Debug_ValueResolver_ArgumentResolver_SessionService.php';
+require __DIR__.'/ContainerTIxXbQa/get_Debug_ValueResolver_ArgumentResolver_ServiceService.php';
+require __DIR__.'/ContainerTIxXbQa/get_Debug_ValueResolver_ArgumentResolver_RequestPayloadService.php';
+require __DIR__.'/ContainerTIxXbQa/get_Debug_ValueResolver_ArgumentResolver_RequestAttributeService.php';
+require __DIR__.'/ContainerTIxXbQa/get_Debug_ValueResolver_ArgumentResolver_RequestService.php';
+require __DIR__.'/ContainerTIxXbQa/get_Debug_ValueResolver_ArgumentResolver_QueryParameterValueResolverService.php';
+require __DIR__.'/ContainerTIxXbQa/get_Debug_ValueResolver_ArgumentResolver_NotTaggedControllerService.php';
+require __DIR__.'/ContainerTIxXbQa/get_Debug_ValueResolver_ArgumentResolver_DefaultService.php';
+require __DIR__.'/ContainerTIxXbQa/get_Debug_ValueResolver_ArgumentResolver_DatetimeService.php';
+require __DIR__.'/ContainerTIxXbQa/get_Debug_ValueResolver_ArgumentResolver_BackedEnumResolverService.php';
+require __DIR__.'/ContainerTIxXbQa/get_Debug_Security_Voter_Security_Access_SimpleRoleVoterService.php';
+require __DIR__.'/ContainerTIxXbQa/get_Debug_Security_Voter_Security_Access_AuthenticatedVoterService.php';
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -157,8 +305,13 @@ $classes[] = 'Doctrine\Bundle\DoctrineBundle\DoctrineBundle';
 $classes[] = 'Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle';
 $classes[] = 'Symfony\Bundle\TwigBundle\TwigBundle';
 $classes[] = 'Symfony\Bundle\SecurityBundle\SecurityBundle';
+<<<<<<< HEAD
 $classes[] = 'SymfonyCasts\Bundle\VerifyEmail\SymfonyCastsVerifyEmailBundle';
 $classes[] = 'Symfony\Bundle\DebugBundle\DebugBundle';
+=======
+$classes[] = 'Nelmio\ApiDocBundle\NelmioApiDocBundle';
+$classes[] = 'SymfonyCasts\Bundle\VerifyEmail\SymfonyCastsVerifyEmailBundle';
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
 $classes[] = 'Symfony\Component\Security\Core\Authorization\Voter\TraceableVoter';
 $classes[] = 'Symfony\Component\Security\Core\Authorization\Voter\AuthenticatedVoter';
 $classes[] = 'Symfony\Component\Security\Core\Authorization\Voter\RoleVoter';
@@ -190,6 +343,7 @@ $classes[] = 'SymfonyCasts\Bundle\VerifyEmail\Factory\UriSignerFactory';
 $classes[] = 'SymfonyCasts\Bundle\VerifyEmail\Util\VerifyEmailQueryUtility';
 $classes[] = 'SymfonyCasts\Bundle\VerifyEmail\Generator\VerifyEmailTokenGenerator';
 $classes[] = 'Symfony\Component\Mailer\Mailer';
+<<<<<<< HEAD
 $classes[] = 'App\Controller\SecurityController';
 $classes[] = 'App\Form\RegistrationFormType';
 $classes[] = 'App\Repository\BaseRepository';
@@ -198,8 +352,17 @@ $classes[] = 'App\Repository\LikesRepository';
 $classes[] = 'App\Repository\PostRepository';
 $classes[] = 'App\Repository\UserRepository';
 $classes[] = 'App\Security\LoginFormAuthenticator';
+=======
+$classes[] = 'App\Form\RegistrationFormType';
+$classes[] = 'App\Repository\CommentRepository';
+$classes[] = 'App\Repository\ParticipationRepository';
+$classes[] = 'App\Repository\PostRepository';
+$classes[] = 'App\Repository\UserRepository';
+$classes[] = 'App\Security\AppCustomAuthenticator';
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
 $classes[] = 'Symfony\Bundle\FrameworkBundle\Controller\RedirectController';
 $classes[] = 'Symfony\Bundle\FrameworkBundle\Controller\TemplateController';
+$classes[] = 'Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory';
 $classes[] = 'Symfony\Component\Cache\Adapter\FilesystemAdapter';
 $classes[] = 'Symfony\Component\Cache\Marshaller\DefaultMarshaller';
 $classes[] = 'Symfony\Component\HttpKernel\CacheClearer\Psr6CacheClearer';
@@ -300,7 +463,6 @@ $classes[] = 'Symfony\Component\HttpKernel\Controller\TraceableControllerResolve
 $classes[] = 'Symfony\Bundle\FrameworkBundle\Controller\ControllerResolver';
 $classes[] = 'Symfony\Component\HttpKernel\Controller\TraceableArgumentResolver';
 $classes[] = 'Symfony\Component\HttpKernel\Controller\ArgumentResolver';
-$classes[] = 'Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory';
 $classes[] = 'App\Kernel';
 $classes[] = 'Symfony\Component\HttpKernel\EventListener\LocaleAwareListener';
 $classes[] = 'Symfony\Component\HttpKernel\EventListener\LocaleListener';
@@ -314,8 +476,58 @@ $classes[] = 'Symfony\Component\Mailer\Transport\SendmailTransportFactory';
 $classes[] = 'Symfony\Component\Mailer\Transport\Smtp\EsmtpTransportFactory';
 $classes[] = 'Symfony\Component\Mailer\Transport\Transports';
 $classes[] = 'Symfony\Component\Mailer\Transport';
+<<<<<<< HEAD
 $classes[] = 'Symfony\Component\DependencyInjection\ParameterBag\ContainerBag';
 $classes[] = 'Symfony\Component\PropertyAccess\PropertyAccessor';
+=======
+$classes[] = 'Nelmio\ApiDocBundle\Controller\SwaggerUiController';
+$classes[] = 'Nelmio\ApiDocBundle\Controller\DocumentationController';
+$classes[] = 'Nelmio\ApiDocBundle\Controller\YamlDocumentationController';
+$classes[] = 'Nelmio\ApiDocBundle\Util\ControllerReflector';
+$classes[] = 'Nelmio\ApiDocBundle\Describer\ExternalDocDescriber';
+$classes[] = 'Nelmio\ApiDocBundle\Describer\DefaultDescriber';
+$classes[] = 'Nelmio\ApiDocBundle\Describer\OpenApiPhpDescriber';
+$classes[] = 'Nelmio\ApiDocBundle\Describer\RouteDescriber';
+$classes[] = 'Nelmio\ApiDocBundle\Form\Extension\DocumentationExtension';
+$classes[] = 'Nelmio\ApiDocBundle\ApiDocGenerator';
+$classes[] = 'OpenApi\Generator';
+$classes[] = 'Nelmio\ApiDocBundle\Processor\NullablePropertyProcessor';
+$classes[] = 'Nelmio\ApiDocBundle\Processor\MapQueryStringProcessor';
+$classes[] = 'Nelmio\ApiDocBundle\Processor\MapRequestPayloadProcessor';
+$classes[] = 'Nelmio\ApiDocBundle\ModelDescriber\EnumModelDescriber';
+$classes[] = 'Nelmio\ApiDocBundle\ModelDescriber\FormModelDescriber';
+$classes[] = 'Nelmio\ApiDocBundle\ModelDescriber\ObjectModelDescriber';
+$classes[] = 'Nelmio\ApiDocBundle\PropertyDescriber\PropertyDescriber';
+$classes[] = 'Nelmio\ApiDocBundle\ModelDescriber\SelfDescribingModelDescriber';
+$classes[] = 'Nelmio\ApiDocBundle\PropertyDescriber\ArrayPropertyDescriber';
+$classes[] = 'Nelmio\ApiDocBundle\PropertyDescriber\BooleanPropertyDescriber';
+$classes[] = 'Nelmio\ApiDocBundle\PropertyDescriber\CompoundPropertyDescriber';
+$classes[] = 'Nelmio\ApiDocBundle\PropertyDescriber\DateTimePropertyDescriber';
+$classes[] = 'Nelmio\ApiDocBundle\PropertyDescriber\DictionaryPropertyDescriber';
+$classes[] = 'Nelmio\ApiDocBundle\PropertyDescriber\FloatPropertyDescriber';
+$classes[] = 'Nelmio\ApiDocBundle\PropertyDescriber\IntegerPropertyDescriber';
+$classes[] = 'Nelmio\ApiDocBundle\PropertyDescriber\NullablePropertyDescriber';
+$classes[] = 'Nelmio\ApiDocBundle\PropertyDescriber\ObjectPropertyDescriber';
+$classes[] = 'Nelmio\ApiDocBundle\PropertyDescriber\RequiredPropertyDescriber';
+$classes[] = 'Nelmio\ApiDocBundle\PropertyDescriber\StringPropertyDescriber';
+$classes[] = 'Nelmio\ApiDocBundle\Render\RenderOpenApi';
+$classes[] = 'Nelmio\ApiDocBundle\Render\Json\JsonOpenApiRenderer';
+$classes[] = 'Nelmio\ApiDocBundle\Render\Yaml\YamlOpenApiRenderer';
+$classes[] = 'Nelmio\ApiDocBundle\Render\Html\HtmlOpenApiRenderer';
+$classes[] = 'Nelmio\ApiDocBundle\RouteDescriber\RouteArgumentDescriber\SymfonyMapQueryParameterDescriber';
+$classes[] = 'Nelmio\ApiDocBundle\RouteDescriber\RouteArgumentDescriber\SymfonyMapQueryStringDescriber';
+$classes[] = 'Nelmio\ApiDocBundle\RouteDescriber\RouteArgumentDescriber\SymfonyMapRequestPayloadDescriber';
+$classes[] = 'Nelmio\ApiDocBundle\RouteDescriber\PhpDocDescriber';
+$classes[] = 'Nelmio\ApiDocBundle\RouteDescriber\RouteArgumentDescriber';
+$classes[] = 'Nelmio\ApiDocBundle\RouteDescriber\RouteMetadataDescriber';
+$classes[] = 'Symfony\Component\Routing\RouteCollection';
+$classes[] = 'Nelmio\ApiDocBundle\Routing\FilteredRouteCollectionBuilder';
+$classes[] = 'Symfony\Component\DependencyInjection\ParameterBag\ContainerBag';
+$classes[] = 'Symfony\Component\PropertyAccess\PropertyAccessor';
+$classes[] = 'Symfony\Component\PropertyInfo\PropertyInfoExtractor';
+$classes[] = 'Symfony\Component\PropertyInfo\Extractor\PhpDocExtractor';
+$classes[] = 'Symfony\Component\PropertyInfo\Extractor\PhpStanExtractor';
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
 $classes[] = 'Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor';
 $classes[] = 'Symfony\Component\HttpFoundation\RequestStack';
 $classes[] = 'Symfony\Component\HttpKernel\EventListener\ResponseListener';
@@ -342,7 +554,10 @@ $classes[] = 'Symfony\Component\String\LazyString';
 $classes[] = 'Symfony\Component\Security\Http\Firewall\AccessListener';
 $classes[] = 'Symfony\Component\Security\Http\AccessMap';
 $classes[] = 'Symfony\Component\Security\Core\Authentication\AuthenticationTrustResolver';
+<<<<<<< HEAD
 $classes[] = 'Symfony\Component\Security\Http\Authentication\AuthenticationUtils';
+=======
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
 $classes[] = 'Symfony\Component\Security\Http\Authenticator\RememberMeAuthenticator';
 $classes[] = 'Symfony\Component\Security\Http\RememberMe\SignatureRememberMeHandler';
 $classes[] = 'Symfony\Component\Security\Core\Signature\SignatureHasher';
@@ -418,8 +633,14 @@ $classes[] = 'Symfony\Bridge\Twig\Extension\FormExtension';
 $classes[] = 'Symfony\Bridge\Twig\Extension\LogoutUrlExtension';
 $classes[] = 'Symfony\Bridge\Twig\Extension\SecurityExtension';
 $classes[] = 'Symfony\Component\Security\Http\Impersonate\ImpersonateUrlGenerator';
+<<<<<<< HEAD
 $classes[] = 'Symfony\Bridge\Twig\Extension\DumpExtension';
 $classes[] = 'Doctrine\Bundle\DoctrineBundle\Twig\DoctrineExtension';
+=======
+$classes[] = 'Doctrine\Bundle\DoctrineBundle\Twig\DoctrineExtension';
+$classes[] = 'Twig\Extension\DebugExtension';
+$classes[] = 'Nelmio\ApiDocBundle\Render\Html\GetNelmioAsset';
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
 $classes[] = 'Symfony\Bridge\Twig\AppVariable';
 $classes[] = 'Twig\RuntimeLoader\ContainerRuntimeLoader';
 $classes[] = 'Symfony\Bundle\TwigBundle\DependencyInjection\Configurator\EnvironmentConfigurator';
@@ -438,13 +659,17 @@ $classes[] = 'Symfony\Component\Validator\Validation';
 $classes[] = 'Symfony\Component\Validator\ContainerConstraintValidatorFactory';
 $classes[] = 'Symfony\Bridge\Doctrine\Validator\DoctrineInitializer';
 $classes[] = 'Symfony\Component\Validator\Mapping\Loader\PropertyInfoLoader';
+<<<<<<< HEAD
 $classes[] = 'Symfony\Component\PropertyInfo\PropertyInfoExtractor';
+=======
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
 $classes[] = 'Symfony\Bridge\Doctrine\Validator\DoctrineLoader';
 $classes[] = 'Symfony\Component\Validator\Constraints\EmailValidator';
 $classes[] = 'Symfony\Component\Validator\Constraints\ExpressionValidator';
 $classes[] = 'Symfony\Component\Validator\Constraints\NoSuspiciousCharactersValidator';
 $classes[] = 'Symfony\Component\Validator\Constraints\NotCompromisedPasswordValidator';
 $classes[] = 'Symfony\Component\Validator\Constraints\WhenValidator';
+<<<<<<< HEAD
 $classes[] = 'Symfony\Component\VarDumper\Cloner\VarCloner';
 $classes[] = 'Symfony\Component\VarDumper\Dumper\HtmlDumper';
 $classes[] = 'Symfony\Component\VarDumper\Server\Connection';
@@ -460,3 +685,7 @@ $classes[] = 'Symfony\\Bundle\\FrameworkBundle\\Routing\\RedirectableCompiledUrl
 $classes[] = 'Symfony\\Component\\Validator\\Mapping\\ClassMetadata';
 $classes[] = 'Symfony\\Component\\Form\\Extension\\Validator\\Constraints\\Form';
 $preloaded = Preloader::preload($classes, $preloaded);
+=======
+
+$preloaded = Preloader::preload($classes);
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25

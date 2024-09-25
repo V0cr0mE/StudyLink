@@ -3,7 +3,11 @@
         'name' => 'symfony/skeleton',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
+<<<<<<< HEAD
         'reference' => 'e27284b256fbdb36ce03e05340bd9e51b6402665',
+=======
+        'reference' => '2aaf2b13186679c89ccb9067ee21b6009e23e02e',
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -145,6 +149,18 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+<<<<<<< HEAD
+=======
+        'nelmio/api-doc-bundle' => array(
+            'pretty_version' => 'v4.31.0',
+            'version' => '4.31.0.0',
+            'reference' => '322c47b9fa3c5913ec9bbeba537a32407151be73',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../nelmio/api-doc-bundle',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
         'nikic/php-parser' => array(
             'pretty_version' => 'v5.2.0',
             'version' => '5.2.0.0',
@@ -153,6 +169,42 @@
             'install_path' => __DIR__ . '/../nikic/php-parser',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'phpdocumentor/reflection-common' => array(
+            'pretty_version' => '2.2.0',
+            'version' => '2.2.0.0',
+            'reference' => '1d01c49d4ed62f25aa84a747ad35d5a16924662b',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpdocumentor/reflection-common',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'phpdocumentor/reflection-docblock' => array(
+            'pretty_version' => '5.4.1',
+            'version' => '5.4.1.0',
+            'reference' => '9d07b3f7fdcf5efec5d1609cba3c19c5ea2bdc9c',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpdocumentor/reflection-docblock',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'phpdocumentor/type-resolver' => array(
+            'pretty_version' => '1.8.2',
+            'version' => '1.8.2.0',
+            'reference' => '153ae662783729388a584b4361f2545e4d841e3c',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpdocumentor/type-resolver',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'phpstan/phpdoc-parser' => array(
+            'pretty_version' => '1.31.0',
+            'version' => '1.31.0.0',
+            'reference' => '249f15fb843bf240cf058372dad29e100cee6c17',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpstan/phpdoc-parser',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'psr/cache' => array(
             'pretty_version' => '3.0.0',
@@ -682,7 +734,11 @@
         'symfony/skeleton' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
+<<<<<<< HEAD
             'reference' => 'e27284b256fbdb36ce03e05340bd9e51b6402665',
+=======
+            'reference' => '2aaf2b13186679c89ccb9067ee21b6009e23e02e',
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -802,6 +858,24 @@
             'reference' => '126b2c97818dbff0cdf3fbfc881aedb3d40aae72',
             'type' => 'library',
             'install_path' => __DIR__ . '/../twig/twig',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'webmozart/assert' => array(
+            'pretty_version' => '1.11.0',
+            'version' => '1.11.0.0',
+            'reference' => '11cb2199493b2f8a3b53e7f19068fc6aac760991',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../webmozart/assert',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'zircote/swagger-php' => array(
+            'pretty_version' => '4.10.6',
+            'version' => '4.10.6.0',
+            'reference' => 'e462ff5269ea0ec91070edd5d51dc7215bdea3b6',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../zircote/swagger-php',
             'aliases' => array(),
             'dev_requirement' => false,
         ),

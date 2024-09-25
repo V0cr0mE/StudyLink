@@ -26,6 +26,19 @@
             "./migrations/.gitignore"
         ]
     },
+    "nelmio/api-doc-bundle": {
+        "version": "4.31",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "3.0",
+            "ref": "c8e0c38e1a280ab9e37587a8fa32b251d5bc1c94"
+        },
+        "files": [
+            "./config/packages/nelmio_api_doc.yaml",
+            "./config/routes/nelmio_api_doc.yaml"
+        ]
+    },
     "symfony/console": {
         "version": "7.1",
         "recipe": {
@@ -153,6 +166,7 @@
             "./config/packages/validator.yaml"
         ]
     },
+<<<<<<< HEAD
     "symfony/web-profiler-bundle": {
         "version": "7.1",
         "recipe": {
@@ -166,6 +180,8 @@
             "./config/routes/web_profiler.yaml"
         ]
     },
+=======
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
     "symfonycasts/verify-email-bundle": {
         "version": "v1.17.0"
     }

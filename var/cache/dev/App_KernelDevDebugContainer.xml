@@ -19,8 +19,13 @@
       <parameter key="DoctrineMigrationsBundle">Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle</parameter>
       <parameter key="TwigBundle">Symfony\Bundle\TwigBundle\TwigBundle</parameter>
       <parameter key="SecurityBundle">Symfony\Bundle\SecurityBundle\SecurityBundle</parameter>
+<<<<<<< HEAD
       <parameter key="SymfonyCastsVerifyEmailBundle">SymfonyCasts\Bundle\VerifyEmail\SymfonyCastsVerifyEmailBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
+=======
+      <parameter key="NelmioApiDocBundle">Nelmio\ApiDocBundle\NelmioApiDocBundle</parameter>
+      <parameter key="SymfonyCastsVerifyEmailBundle">SymfonyCasts\Bundle\VerifyEmail\SymfonyCastsVerifyEmailBundle</parameter>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -47,14 +52,24 @@
         <parameter key="path">C:\laragon\www\StudyLink\vendor\symfony\security-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\SecurityBundle</parameter>
       </parameter>
+<<<<<<< HEAD
+=======
+      <parameter key="NelmioApiDocBundle" type="collection">
+        <parameter key="path">C:\laragon\www\StudyLink\vendor\nelmio\api-doc-bundle</parameter>
+        <parameter key="namespace">Nelmio\ApiDocBundle</parameter>
+      </parameter>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
       <parameter key="SymfonyCastsVerifyEmailBundle" type="collection">
         <parameter key="path">C:\laragon\www\StudyLink\vendor\symfonycasts\verify-email-bundle\src</parameter>
         <parameter key="namespace">SymfonyCasts\Bundle\VerifyEmail</parameter>
       </parameter>
+<<<<<<< HEAD
       <parameter key="DebugBundle" type="collection">
         <parameter key="path">C:\laragon\www\StudyLink\vendor\symfony\debug-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\DebugBundle</parameter>
       </parameter>
+=======
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">App_KernelDevDebugContainer</parameter>
@@ -114,7 +129,11 @@
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="form.type_extension.csrf.enabled">true</parameter>
     <parameter key="form.type_extension.csrf.field_name">_token</parameter>
+<<<<<<< HEAD
     <parameter key="validator.mapping.cache.file">C:/laragon/www/StudyLink/var/cache/dev/validation.php</parameter>
+=======
+    <parameter key="validator.mapping.cache.file">C:\laragon\www\StudyLink\var\cache\dev/validation.php</parameter>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="data_collector.templates" type="collection"/>
     <parameter key="doctrine.dbal.configuration.class">Doctrine\DBAL\Configuration</parameter>
@@ -200,7 +219,14 @@
       <parameter>main</parameter>
     </parameter>
     <parameter key="security.logout_uris" type="collection"/>
+<<<<<<< HEAD
     <parameter key="env(VAR_DUMPER_SERVER)">127.0.0.1:9912</parameter>
+=======
+    <parameter key="nelmio_api_doc.areas" type="collection">
+      <parameter>default</parameter>
+    </parameter>
+    <parameter key="nelmio_api_doc.use_validation_groups">false</parameter>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
     <parameter key="console.command.ids" type="collection"/>
   </parameters>
   <services>
@@ -223,11 +249,15 @@
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <argument type="service" id="App\Security\EmailVerifier"/>
+<<<<<<< HEAD
       <argument type="service" id="logger"/>
+=======
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
       <call method="setContainer">
         <argument type="service" id=".service_locator.QaaoWjx.App\Controller\RegistrationController"/>
       </call>
     </service>
+<<<<<<< HEAD
     <service id="App\Controller\SecurityController" class="App\Controller\SecurityController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -247,6 +277,16 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\LikesRepository" class="App\Repository\LikesRepository" autowire="true" autoconfigure="true">
+=======
+    <service id="App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Repository\CommentRepository" class="App\Repository\CommentRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\ParticipationRepository" class="App\Repository\ParticipationRepository" autowire="true" autoconfigure="true">
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -258,14 +298,23 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+<<<<<<< HEAD
+=======
+    <service id="App\Security\AppCustomAuthenticator" class="App\Security\AppCustomAuthenticator" autowire="true" autoconfigure="true">
+      <argument type="service" id="router.default"/>
+    </service>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
     <service id="App\Security\EmailVerifier" class="App\Security\EmailVerifier" autowire="true" autoconfigure="true">
       <argument type="service" id="symfonycasts.verify_email.helper"/>
       <argument type="service" id="mailer.mailer"/>
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
     </service>
+<<<<<<< HEAD
     <service id="App\Security\LoginFormAuthenticator" class="App\Security\LoginFormAuthenticator" autowire="true" autoconfigure="true">
       <argument type="service" id="router.default"/>
     </service>
+=======
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
     <service id="argument_resolver.backed_enum_resolver" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\BackedEnumValueResolver">
       <tag priority="100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\BackedEnumValueResolver">controller.argument_value_resolver</tag>
@@ -289,7 +338,11 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
+<<<<<<< HEAD
       <argument type="service" id=".service_locator.vi_kmHE"/>
+=======
+      <argument type="service" id=".service_locator.B3ojDwc"/>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -901,6 +954,10 @@
         <argument>Symfony\Component\Form\Extension\Csrf\Type\FormTypeCsrfExtension</argument>
         <argument>Symfony\Component\Form\Extension\PasswordHasher\Type\FormTypePasswordHasherExtension</argument>
         <argument>Symfony\Component\Form\Extension\PasswordHasher\Type\PasswordTypePasswordHasherExtension</argument>
+<<<<<<< HEAD
+=======
+        <argument>Nelmio\ApiDocBundle\Form\Extension\DocumentationExtension</argument>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
       </argument>
       <argument type="collection">
         <argument>Symfony\Component\Form\Extension\Validator\ValidatorTypeGuesser</argument>
@@ -1697,6 +1754,7 @@
         <argument>0</argument>
       </call>
       <call method="addListener">
+<<<<<<< HEAD
         <argument>console.command</argument>
         <argument type="collection">
           <argument type="service_closure" id="debug.dump_listener"/>
@@ -1705,6 +1763,8 @@
         <argument>1024</argument>
       </call>
       <call method="addListener">
+=======
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
         <argument>Symfony\Component\Security\Http\Event\CheckPassportEvent</argument>
         <argument type="collection">
           <argument type="service_closure" id="security.listener.csrf_protection"/>
@@ -1742,7 +1802,11 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
+<<<<<<< HEAD
       <argument type="service" id=".service_locator.vi_kmHE"/>
+=======
+      <argument type="service" id=".service_locator.B3ojDwc"/>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
     </service>
     <service id="routing.resolver" class="Symfony\Component\Config\Loader\LoaderResolver">
       <call method="addLoader">
@@ -1917,10 +1981,17 @@
       <argument>C:\laragon\www\StudyLink/.env.dev.local</argument>
     </service>
     <service id="type_info.type_context_factory" class="Symfony\Component\TypeInfo\TypeContext\TypeContextFactory">
+<<<<<<< HEAD
       <argument>null</argument>
     </service>
     <service id="type_info.resolver" class="Symfony\Component\TypeInfo\TypeResolver\TypeResolver">
       <argument type="service" id=".service_locator.PZ0UHmb"/>
+=======
+      <argument type="service" id="type_info.resolver.string" on-invalid="null"/>
+    </service>
+    <service id="type_info.resolver" class="Symfony\Component\TypeInfo\TypeResolver\TypeResolver">
+      <argument type="service" id=".service_locator.bvmE8RF"/>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
     </service>
     <service id="type_info.resolver.reflection_type" class="Symfony\Component\TypeInfo\TypeResolver\ReflectionTypeResolver">
       <argument type="service" id="type_info.type_context_factory"/>
@@ -1937,6 +2008,10 @@
       <argument type="service" id="type_info.resolver.reflection_type"/>
       <argument type="service" id="type_info.type_context_factory"/>
     </service>
+<<<<<<< HEAD
+=======
+    <service id="type_info.resolver.string" class="Symfony\Component\TypeInfo\TypeResolver\StringTypeResolver"/>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
     <service id="property_info" class="Symfony\Component\PropertyInfo\PropertyInfoExtractor">
       <argument type="iterator">
         <argument type="service" id="property_info.reflection_extractor"/>
@@ -1944,9 +2019,19 @@
       </argument>
       <argument type="iterator">
         <argument type="service" id="doctrine.orm.default_entity_manager.property_info_extractor"/>
+<<<<<<< HEAD
         <argument type="service" id="property_info.reflection_extractor"/>
       </argument>
       <argument type="iterator"/>
+=======
+        <argument type="service" id="property_info.phpstan_extractor"/>
+        <argument type="service" id="property_info.php_doc_extractor"/>
+        <argument type="service" id="property_info.reflection_extractor"/>
+      </argument>
+      <argument type="iterator">
+        <argument type="service" id="property_info.php_doc_extractor"/>
+      </argument>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
       <argument type="iterator">
         <argument type="service" id="doctrine.orm.default_entity_manager.property_info_extractor"/>
         <argument type="service" id="property_info.reflection_extractor"/>
@@ -1961,6 +2046,16 @@
       <tag name="property_info.access_extractor" priority="-1000"/>
       <tag name="property_info.initializable_extractor" priority="-1000"/>
     </service>
+<<<<<<< HEAD
+=======
+    <service id="property_info.phpstan_extractor" class="Symfony\Component\PropertyInfo\Extractor\PhpStanExtractor">
+      <tag name="property_info.type_extractor" priority="-1000"/>
+    </service>
+    <service id="property_info.php_doc_extractor" class="Symfony\Component\PropertyInfo\Extractor\PhpDocExtractor">
+      <tag name="property_info.description_extractor" priority="-1000"/>
+      <tag name="property_info.type_extractor" priority="-1001"/>
+    </service>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
     <service id=".cache_connection.MfCypIA" class="Symfony\Component\Cache\Adapter\AbstractAdapter" constructor="createConnection">
       <argument>redis://localhost</argument>
       <argument type="collection">
@@ -2078,6 +2173,10 @@
           <argument type="service" id="form.type_extension.form.validator"/>
           <argument type="service" id="form.type_extension.csrf"/>
           <argument type="service" id="form.type_extension.form.password_hasher"/>
+<<<<<<< HEAD
+=======
+          <argument type="service" id="nelmio_api_doc.form.documentation_extension"/>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
         </argument>
         <argument key="Symfony\Component\Form\Extension\Core\Type\RepeatedType" type="iterator">
           <argument type="service" id="form.type_extension.repeated.validator"/>
@@ -2198,10 +2297,17 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
+<<<<<<< HEAD
       <argument>C:/laragon/www/StudyLink/var/cache/dev/validation.php</argument>
     </service>
     <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" constructor="create">
       <argument>C:/laragon/www/StudyLink/var/cache/dev/validation.php</argument>
+=======
+      <argument>C:\laragon\www\StudyLink\var\cache\dev/validation.php</argument>
+    </service>
+    <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" constructor="create">
+      <argument>C:\laragon\www\StudyLink\var\cache\dev/validation.php</argument>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
       <argument type="service" id="cache.validator"/>
     </service>
     <service id="validator.validator_factory" class="Symfony\Component\Validator\ContainerConstraintValidatorFactory">
@@ -2469,7 +2575,11 @@
       <argument>5r1IzwRnej</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
+<<<<<<< HEAD
       <argument>C:/laragon/www/StudyLink/var/cache/dev/pools/system</argument>
+=======
+      <argument>C:\laragon\www\StudyLink\var\cache\dev/pools/system</argument>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -2910,7 +3020,11 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
+<<<<<<< HEAD
       <argument type="service" id=".service_locator..0PHQf9"/>
+=======
+      <argument type="service" id=".service_locator.EOLr7r8"/>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -3423,6 +3537,18 @@
       </call>
       <call method="addExtension">
         <argument type="service" id="twig.extension.form"/>
+<<<<<<< HEAD
+=======
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="twig.extension.logout_url"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="twig.extension.security"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="doctrine.twig.doctrine_extension"/>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
       </call>
       <call method="addExtension">
         <argument type="service" id="twig.extension.logout_url"/>
@@ -3435,6 +3561,9 @@
       </call>
       <call method="addExtension">
         <argument type="service" id="doctrine.twig.doctrine_extension"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="nelmio_api_doc.render_docs.html.asset"/>
       </call>
       <call method="addGlobal">
         <argument>app</argument>
@@ -3508,12 +3637,21 @@
         <argument>!Security</argument>
       </call>
       <call method="addPath">
+<<<<<<< HEAD
         <argument>C:\laragon\www\StudyLink\vendor\symfony\debug-bundle/Resources/views</argument>
         <argument>Debug</argument>
       </call>
       <call method="addPath">
         <argument>C:\laragon\www\StudyLink\vendor\symfony\debug-bundle/Resources/views</argument>
         <argument>!Debug</argument>
+=======
+        <argument>C:\laragon\www\StudyLink\vendor\nelmio\api-doc-bundle/templates</argument>
+        <argument>NelmioApiDoc</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\laragon\www\StudyLink\vendor\nelmio\api-doc-bundle/templates</argument>
+        <argument>!NelmioApiDoc</argument>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
       </call>
       <call method="addPath">
         <argument>C:\laragon\www\StudyLink/templates</argument>
@@ -3677,7 +3815,11 @@
       <argument type="service" id=".service_locator.NXTTdTW"/>
       <argument type="collection">
         <argument key="dev">null</argument>
+<<<<<<< HEAD
         <argument key="main" type="service" id=".service_locator.q7unTh."/>
+=======
+        <argument key="main" type="service" id=".service_locator.JDKrE6v"/>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
       </argument>
     </service>
     <service id="security.user_value_resolver" class="Symfony\Component\Security\Http\Controller\UserValueResolver">
@@ -3806,7 +3948,11 @@
       <argument>iRAEGphpyd</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
+<<<<<<< HEAD
       <argument>C:/laragon/www/StudyLink/var/cache/dev/pools/system</argument>
+=======
+      <argument>C:\laragon\www\StudyLink\var\cache\dev/pools/system</argument>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -3822,7 +3968,11 @@
       <argument>hstVFqnj3M</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
+<<<<<<< HEAD
       <argument>C:/laragon/www/StudyLink/var/cache/dev/pools/system</argument>
+=======
+      <argument>C:\laragon\www\StudyLink\var\cache\dev/pools/system</argument>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -3832,7 +3982,11 @@
       <argument>wWsB1IYb1t</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
+<<<<<<< HEAD
       <argument>C:/laragon/www/StudyLink/var/cache/dev/pools/system</argument>
+=======
+      <argument>C:\laragon\www\StudyLink\var\cache\dev/pools/system</argument>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -4191,7 +4345,11 @@
       <argument type="service" id=".service_locator.YbySDCA"/>
       <argument type="collection">
         <argument key="main" type="collection">
+<<<<<<< HEAD
           <argument type="service" id="App\Security\LoginFormAuthenticator"/>
+=======
+          <argument type="service" id="App\Security\AppCustomAuthenticator"/>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
           <argument type="service" id="security.authenticator.remember_me.main"/>
         </argument>
       </argument>
@@ -4246,12 +4404,20 @@
       <argument>false</argument>
       <argument>security.user.provider.concrete.app_user_provider</argument>
       <argument>main</argument>
+<<<<<<< HEAD
       <argument>App\Security\LoginFormAuthenticator</argument>
+=======
+      <argument>App\Security\AppCustomAuthenticator</argument>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
       <argument>null</argument>
       <argument>null</argument>
       <argument type="collection">
         <argument>remember_me</argument>
+<<<<<<< HEAD
         <argument>App\Security\LoginFormAuthenticator</argument>
+=======
+        <argument>App\Security\AppCustomAuthenticator</argument>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
       </argument>
       <argument>null</argument>
       <argument type="collection">
@@ -4366,7 +4532,11 @@
       <argument>WKOhIsf4ym</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
+<<<<<<< HEAD
       <argument>C:/laragon/www/StudyLink/var/cache/dev/pools/system</argument>
+=======
+      <argument>C:\laragon\www\StudyLink\var\cache\dev/pools/system</argument>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -4426,7 +4596,11 @@
     <service id="security.authenticator.manager.main" class="Symfony\Component\Security\Http\Authentication\AuthenticatorManager">
       <tag name="monolog.logger" channel="security"/>
       <argument type="collection">
+<<<<<<< HEAD
         <argument type="service" id="App\Security\LoginFormAuthenticator"/>
+=======
+        <argument type="service" id="App\Security\AppCustomAuthenticator"/>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
         <argument type="service" id="security.authenticator.remember_me.main"/>
       </argument>
       <argument type="service" id="security.token_storage"/>
@@ -4451,16 +4625,27 @@
       <argument type="service" id="security.authentication.trust_resolver"/>
       <argument type="service" id="security.http_utils"/>
       <argument>main</argument>
+<<<<<<< HEAD
       <argument type="service" id="App\Security\LoginFormAuthenticator"/>
+=======
+      <argument type="service" id="App\Security\AppCustomAuthenticator"/>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
       <argument>null</argument>
       <argument>null</argument>
       <argument type="service" id="logger" on-invalid="null"/>
       <argument>false</argument>
     </service>
+<<<<<<< HEAD
     <service id=".service_locator.q7unTh." class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Security\LoginFormAuthenticator" type="service_closure" id="App\Security\LoginFormAuthenticator"/>
+=======
+    <service id=".service_locator.JDKrE6v" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="App\Security\AppCustomAuthenticator" type="service_closure" id="App\Security\AppCustomAuthenticator"/>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
         <argument key="security.authenticator.remember_me.main" type="service_closure" id="security.authenticator.remember_me.main"/>
       </argument>
     </service>
@@ -4497,6 +4682,239 @@
         <argument>Hash a user password</argument>
       </call>
     </service>
+<<<<<<< HEAD
+=======
+    <service id="nelmio_api_doc.command.dump" class="Nelmio\ApiDocBundle\Command\DumpCommand" public="true">
+      <tag name="console.command" command="nelmio:apidoc:dump"/>
+      <tag name="container.no_preload"/>
+      <argument type="service" id="nelmio_api_doc.render_docs"/>
+      <call method="setName">
+        <argument>nelmio:apidoc:dump</argument>
+      </call>
+    </service>
+    <service id="nelmio_api_doc.controller.swagger_ui" class="Nelmio\ApiDocBundle\Controller\SwaggerUiController" public="true">
+      <argument type="service" id="nelmio_api_doc.render_docs"/>
+      <argument>swaggerui</argument>
+    </service>
+    <service id="nelmio_api_doc.controller.redocly" class="Nelmio\ApiDocBundle\Controller\SwaggerUiController" public="true">
+      <argument type="service" id="nelmio_api_doc.render_docs"/>
+      <argument>redocly</argument>
+    </service>
+    <service id="nelmio_api_doc.controller.swagger_json" class="Nelmio\ApiDocBundle\Controller\DocumentationController" public="true">
+      <argument type="service" id="nelmio_api_doc.render_docs"/>
+    </service>
+    <service id="nelmio_api_doc.controller.swagger_yaml" class="Nelmio\ApiDocBundle\Controller\YamlDocumentationController" public="true">
+      <argument type="service" id="nelmio_api_doc.render_docs"/>
+    </service>
+    <service id="nelmio_api_doc.render_docs" class="Nelmio\ApiDocBundle\Render\RenderOpenApi" public="true">
+      <argument type="service" id="nelmio_api_doc.generator_locator"/>
+      <argument type="service" id="nelmio_api_doc.render_docs.json"/>
+      <argument type="service" id="nelmio_api_doc.render_docs.yaml"/>
+      <argument type="service" id="nelmio_api_doc.render_docs.html" on-invalid="ignore"/>
+    </service>
+    <service id="nelmio_api_doc.render_docs.html" class="Nelmio\ApiDocBundle\Render\Html\HtmlOpenApiRenderer">
+      <argument type="service" id="twig"/>
+      <argument type="collection">
+        <argument key="assets_mode">cdn</argument>
+        <argument key="swagger_ui_config" type="collection"/>
+        <argument key="redocly_config" type="collection"/>
+      </argument>
+    </service>
+    <service id="nelmio_api_doc.render_docs.html.asset" class="Nelmio\ApiDocBundle\Render\Html\GetNelmioAsset">
+      <tag name="twig.extension"/>
+      <argument type="service" id="twig.extension.assets"/>
+    </service>
+    <service id="nelmio_api_doc.render_docs.json" class="Nelmio\ApiDocBundle\Render\Json\JsonOpenApiRenderer"/>
+    <service id="nelmio_api_doc.render_docs.yaml" class="Nelmio\ApiDocBundle\Render\Yaml\YamlOpenApiRenderer"/>
+    <service id="nelmio_api_doc.controller_reflector" class="Nelmio\ApiDocBundle\Util\ControllerReflector">
+      <argument type="service" id="service_container"/>
+    </service>
+    <service id="nelmio_api_doc.describers.config" class="Nelmio\ApiDocBundle\Describer\ExternalDocDescriber">
+      <tag name="nelmio_api_doc.describer" priority="1000"/>
+      <tag name="nelmio_api_doc.describer.default" priority="1000"/>
+      <argument type="collection">
+        <argument key="info" type="collection">
+          <argument key="title">My App</argument>
+          <argument key="description">This is an awesome app!</argument>
+          <argument key="version">1.0.0</argument>
+        </argument>
+      </argument>
+    </service>
+    <service id="nelmio_api_doc.describers.default" class="Nelmio\ApiDocBundle\Describer\DefaultDescriber">
+      <tag name="nelmio_api_doc.describer" priority="-1000"/>
+      <tag name="nelmio_api_doc.describer.default" priority="-1000"/>
+    </service>
+    <service id="nelmio_api_doc.route_describers.route_metadata" class="Nelmio\ApiDocBundle\RouteDescriber\RouteMetadataDescriber">
+      <tag name="nelmio_api_doc.route_describer" priority="-300"/>
+    </service>
+    <service id="nelmio_api_doc.model_describers.self_describing" class="Nelmio\ApiDocBundle\ModelDescriber\SelfDescribingModelDescriber">
+      <tag name="nelmio_api_doc.model_describer" priority="1000"/>
+    </service>
+    <service id="nelmio_api_doc.model_describers.object" class="Nelmio\ApiDocBundle\ModelDescriber\ObjectModelDescriber">
+      <tag name="nelmio_api_doc.model_describer"/>
+      <argument type="service" id="property_info"/>
+      <argument>null</argument>
+      <argument type="service" id="nelmio_api_doc.object_model.property_describer"/>
+      <argument type="collection">
+        <argument>json</argument>
+      </argument>
+      <argument>null</argument>
+      <argument>false</argument>
+      <argument>null</argument>
+    </service>
+    <service id="nelmio_api_doc.model_describers.enum" class="Nelmio\ApiDocBundle\ModelDescriber\EnumModelDescriber">
+      <tag name="nelmio_api_doc.model_describer" priority="100"/>
+    </service>
+    <service id="nelmio_api_doc.object_model.property_describer" class="Nelmio\ApiDocBundle\PropertyDescriber\PropertyDescriber">
+      <tag name="nelmio_api_doc.object_model.property_describer" priority="100"/>
+      <argument type="tagged_iterator" tag="nelmio_api_doc.object_model.property_describer"/>
+    </service>
+    <service id="nelmio_api_doc.object_model.property_describers.array" class="Nelmio\ApiDocBundle\PropertyDescriber\ArrayPropertyDescriber">
+      <tag name="nelmio_api_doc.object_model.property_describer" priority="-1000"/>
+    </service>
+    <service id="nelmio_api_doc.object_model.property_describers.dictionary" class="Nelmio\ApiDocBundle\PropertyDescriber\DictionaryPropertyDescriber">
+      <tag name="nelmio_api_doc.object_model.property_describer" priority="-1000"/>
+    </service>
+    <service id="nelmio_api_doc.object_model.property_describers.boolean" class="Nelmio\ApiDocBundle\PropertyDescriber\BooleanPropertyDescriber">
+      <tag name="nelmio_api_doc.object_model.property_describer" priority="-1000"/>
+    </service>
+    <service id="nelmio_api_doc.object_model.property_describers.float" class="Nelmio\ApiDocBundle\PropertyDescriber\FloatPropertyDescriber">
+      <tag name="nelmio_api_doc.object_model.property_describer" priority="-1000"/>
+    </service>
+    <service id="nelmio_api_doc.object_model.property_describers.integer" class="Nelmio\ApiDocBundle\PropertyDescriber\IntegerPropertyDescriber">
+      <tag name="nelmio_api_doc.object_model.property_describer" priority="-1000"/>
+    </service>
+    <service id="nelmio_api_doc.object_model.property_describers.string" class="Nelmio\ApiDocBundle\PropertyDescriber\StringPropertyDescriber">
+      <tag name="nelmio_api_doc.object_model.property_describer" priority="-1000"/>
+    </service>
+    <service id="nelmio_api_doc.object_model.property_describers.date_time" class="Nelmio\ApiDocBundle\PropertyDescriber\DateTimePropertyDescriber">
+      <tag name="nelmio_api_doc.object_model.property_describer" priority="-1000"/>
+    </service>
+    <service id="nelmio_api_doc.object_model.property_describers.nullable" class="Nelmio\ApiDocBundle\PropertyDescriber\NullablePropertyDescriber">
+      <tag name="nelmio_api_doc.object_model.property_describer"/>
+    </service>
+    <service id="nelmio_api_doc.object_model.property_describers.required" class="Nelmio\ApiDocBundle\PropertyDescriber\RequiredPropertyDescriber">
+      <tag name="nelmio_api_doc.object_model.property_describer"/>
+    </service>
+    <service id="nelmio_api_doc.object_model.property_describers.object" class="Nelmio\ApiDocBundle\PropertyDescriber\ObjectPropertyDescriber">
+      <tag name="nelmio_api_doc.object_model.property_describer" priority="-1000"/>
+    </service>
+    <service id="nelmio_api_doc.object_model.property_describers.compound" class="Nelmio\ApiDocBundle\PropertyDescriber\CompoundPropertyDescriber">
+      <tag name="nelmio_api_doc.object_model.property_describer" priority="-1000"/>
+    </service>
+    <service id="nelmio_api_doc.form.documentation_extension" class="Nelmio\ApiDocBundle\Form\Extension\DocumentationExtension">
+      <tag name="form.type_extension" extended_type="Symfony\Component\Form\Extension\Core\Type\FormType" extended-type="Symfony\Component\Form\Extension\Core\Type\FormType"/>
+    </service>
+    <service id="nelmio_api_doc.swagger.processor.nullable_property" class="Nelmio\ApiDocBundle\Processor\NullablePropertyProcessor">
+      <tag name="nelmio_api_doc.swagger.processor"/>
+    </service>
+    <service id="nelmio_api_doc.open_api.generator" class="OpenApi\Generator">
+      <call method="addProcessor">
+        <argument type="service" id="nelmio_api_doc.swagger.processor.nullable_property"/>
+        <argument>null</argument>
+      </call>
+      <call method="addProcessor">
+        <argument type="service" id="nelmio_api_doc.swagger.processor.map_query_string"/>
+        <argument>null</argument>
+      </call>
+      <call method="addProcessor">
+        <argument type="service" id="nelmio_api_doc.swagger.processor.map_request_payload"/>
+        <argument>null</argument>
+      </call>
+    </service>
+    <service id="nelmio_api_doc.generator.default" class="Nelmio\ApiDocBundle\ApiDocGenerator" public="true">
+      <tag name="monolog.logger" channel="nelmio_api_doc"/>
+      <argument type="tagged_iterator" tag="nelmio_api_doc.describer.default"/>
+      <argument type="tagged_iterator" tag="nelmio_api_doc.model_describer"/>
+      <argument>null</argument>
+      <argument>openapi_doc.default</argument>
+      <argument type="service" id="nelmio_api_doc.open_api.generator"/>
+      <call method="setAlternativeNames">
+        <argument type="collection"/>
+      </call>
+      <call method="setMediaTypes">
+        <argument type="collection">
+          <argument>json</argument>
+        </argument>
+      </call>
+      <call method="setLogger">
+        <argument type="service" id="logger"/>
+      </call>
+      <call method="setOpenApiVersion">
+        <argument>null</argument>
+      </call>
+    </service>
+    <service id="nelmio_api_doc.describers.route.default" class="Nelmio\ApiDocBundle\Describer\RouteDescriber">
+      <tag name="nelmio_api_doc.describer.default" priority="-400"/>
+      <argument type="service" id="nelmio_api_doc.routes.default"/>
+      <argument type="service" id="nelmio_api_doc.controller_reflector"/>
+      <argument type="tagged_iterator" tag="nelmio_api_doc.route_describer"/>
+    </service>
+    <service id="nelmio_api_doc.describers.openapi_php.default" class="Nelmio\ApiDocBundle\Describer\OpenApiPhpDescriber">
+      <tag name="nelmio_api_doc.describer.default" priority="-200"/>
+      <argument type="service" id="nelmio_api_doc.routes.default"/>
+      <argument type="service" id="nelmio_api_doc.controller_reflector"/>
+      <argument>null</argument>
+      <argument type="service" id="logger"/>
+    </service>
+    <service id="nelmio_api_doc.describers.config.default" class="Nelmio\ApiDocBundle\Describer\ExternalDocDescriber">
+      <tag name="nelmio_api_doc.describer.default" priority="990"/>
+      <argument type="collection"/>
+      <argument>true</argument>
+    </service>
+    <service id="nelmio_api_doc.routes.default" class="Symfony\Component\Routing\RouteCollection">
+      <argument type="service">
+        <service class="Symfony\Component\Routing\RouteCollection">
+          <factory service="router.default" method="getRouteCollection"/>
+        </service>
+      </argument>
+      <factory method="filter">
+        <service class="Nelmio\ApiDocBundle\Routing\FilteredRouteCollectionBuilder">
+          <argument type="service" id="annotation_reader" on-invalid="null"/>
+          <argument type="service" id="nelmio_api_doc.controller_reflector"/>
+          <argument>default</argument>
+          <argument type="collection">
+            <argument key="path_patterns" type="collection">
+              <argument>^/api(?!/doc$)</argument>
+            </argument>
+            <argument key="host_patterns" type="collection"/>
+            <argument key="name_patterns" type="collection"/>
+            <argument key="with_annotation">false</argument>
+            <argument key="disable_default_routes">false</argument>
+          </argument>
+        </service>
+      </factory>
+    </service>
+    <service id="nelmio_api_doc.generator_locator" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="default" type="service_closure" id="nelmio_api_doc.generator.default"/>
+      </argument>
+    </service>
+    <service id="nelmio_api_doc.route_describers.php_doc" class="Nelmio\ApiDocBundle\RouteDescriber\PhpDocDescriber">
+      <tag name="nelmio_api_doc.route_describer" priority="-275"/>
+    </service>
+    <service id="nelmio_api_doc.route_describers.route_argument" class="Nelmio\ApiDocBundle\RouteDescriber\RouteArgumentDescriber">
+      <tag name="nelmio_api_doc.route_describer" priority="-225"/>
+      <argument type="service" id="argument_metadata_factory"/>
+      <argument type="tagged_iterator" tag="nelmio_api_doc.route_argument_describer"/>
+    </service>
+    <service id="nelmio_api_doc.route_argument_describer.map_query_string" class="Nelmio\ApiDocBundle\RouteDescriber\RouteArgumentDescriber\SymfonyMapQueryStringDescriber">
+      <tag name="nelmio_api_doc.route_argument_describer" priority="0"/>
+    </service>
+    <service id="nelmio_api_doc.swagger.processor.map_query_string" class="Nelmio\ApiDocBundle\Processor\MapQueryStringProcessor">
+      <tag name="nelmio_api_doc.swagger.processor" priority="0"/>
+    </service>
+    <service id="nelmio_api_doc.route_argument_describer.map_request_payload" class="Nelmio\ApiDocBundle\RouteDescriber\RouteArgumentDescriber\SymfonyMapRequestPayloadDescriber">
+      <tag name="nelmio_api_doc.route_argument_describer" priority="0"/>
+    </service>
+    <service id="nelmio_api_doc.swagger.processor.map_request_payload" class="Nelmio\ApiDocBundle\Processor\MapRequestPayloadProcessor">
+      <tag name="nelmio_api_doc.swagger.processor" priority="0"/>
+    </service>
+    <service id="nelmio_api_doc.route_argument_describer.map_query_parameter" class="Nelmio\ApiDocBundle\RouteDescriber\RouteArgumentDescriber\SymfonyMapQueryParameterDescriber">
+      <tag name="nelmio_api_doc.route_argument_describer" priority="0"/>
+    </service>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
     <service id="symfonycasts.verify_email.token_generator" class="SymfonyCasts\Bundle\VerifyEmail\Generator\VerifyEmailTokenGenerator">
       <argument>%env(APP_SECRET)%</argument>
     </service>
@@ -4515,6 +4933,7 @@
       <argument type="service" id="symfonycasts.verify_email.token_generator"/>
       <argument>3600</argument>
     </service>
+<<<<<<< HEAD
     <service id="twig.extension.dump" class="Symfony\Bridge\Twig\Extension\DumpExtension">
       <tag name="twig.extension"/>
       <argument type="service" id="var_dumper.cloner"/>
@@ -4622,12 +5041,15 @@
         <argument>Start a dump server that collects and displays dumps in a single place</argument>
       </call>
     </service>
+=======
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomePageController" class="App\Controller\HomePageController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomePageController" class="App\Controller\HomePageController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HomePageController" class="App\Controller\HomePageController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" autoconfigure="true" abstract="true"/>
+<<<<<<< HEAD
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -4639,6 +5061,14 @@
     <service id=".abstract.instanceof.App\Repository\CommentsRepository" class="App\Repository\CommentsRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\LikesRepository" class="App\Repository\LikesRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\LikesRepository" class="App\Repository\LikesRepository" autowire="true" autoconfigure="true" abstract="true"/>
+=======
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CommentRepository" class="App\Repository\CommentRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\CommentRepository" class="App\Repository\CommentRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ParticipationRepository" class="App\Repository\ParticipationRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ParticipationRepository" class="App\Repository\ParticipationRepository" autowire="true" autoconfigure="true" abstract="true"/>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PostRepository" class="App\Repository\PostRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\PostRepository" class="App\Repository\PostRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
@@ -5230,6 +5660,7 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.QVAk1vM" method="withContext"/>
     </service>
+<<<<<<< HEAD
     <service id=".service_locator.mXDaS5b" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5243,6 +5674,9 @@
       <factory service=".service_locator.mXDaS5b" method="withContext"/>
     </service>
     <service id=".service_locator.vi_kmHE" class="Symfony\Component\DependencyInjection\ServiceLocator">
+=======
+    <service id=".service_locator.B3ojDwc" class="Symfony\Component\DependencyInjection\ServiceLocator">
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.4wc4Ag1.kernel::registerContainerConfiguration()"/>
@@ -5250,11 +5684,17 @@
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.4wc4Ag1.kernel::loadRoutes()"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.4wc4Ag1.kernel::loadRoutes()"/>
         <argument key="App\Controller\RegistrationController::register" type="service_closure" id=".service_locator.QVAk1vM.App\Controller\RegistrationController::register()"/>
+<<<<<<< HEAD
         <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.mXDaS5b.App\Controller\SecurityController::login()"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.4wc4Ag1.kernel::registerContainerConfiguration()"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.4wc4Ag1.kernel::loadRoutes()"/>
         <argument key="App\Controller\RegistrationController:register" type="service_closure" id=".service_locator.QVAk1vM.App\Controller\RegistrationController::register()"/>
         <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.mXDaS5b.App\Controller\SecurityController::login()"/>
+=======
+        <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.4wc4Ag1.kernel::registerContainerConfiguration()"/>
+        <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.4wc4Ag1.kernel::loadRoutes()"/>
+        <argument key="App\Controller\RegistrationController:register" type="service_closure" id=".service_locator.QVAk1vM.App\Controller\RegistrationController::register()"/>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
       </argument>
     </service>
     <service id=".service_locator.ea.H0ae" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -5355,12 +5795,20 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service_closure" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
+<<<<<<< HEAD
     <service id=".service_locator..0PHQf9" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\BaseRepository" type="service_closure" id="App\Repository\BaseRepository"/>
         <argument key="App\Repository\CommentsRepository" type="service_closure" id="App\Repository\CommentsRepository"/>
         <argument key="App\Repository\LikesRepository" type="service_closure" id="App\Repository\LikesRepository"/>
+=======
+    <service id=".service_locator.EOLr7r8" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="App\Repository\CommentRepository" type="service_closure" id="App\Repository\CommentRepository"/>
+        <argument key="App\Repository\ParticipationRepository" type="service_closure" id="App\Repository\ParticipationRepository"/>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
         <argument key="App\Repository\PostRepository" type="service_closure" id="App\Repository\PostRepository"/>
         <argument key="App\Repository\UserRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
@@ -5418,6 +5866,19 @@
     <service id="security.ldap_locator" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <argument type="collection"/>
     </service>
+<<<<<<< HEAD
+=======
+    <service id="nelmio_api_doc.model_describers.form" class="Nelmio\ApiDocBundle\ModelDescriber\FormModelDescriber">
+      <tag name="nelmio_api_doc.model_describer" priority="100"/>
+      <argument type="service" id="form.factory"/>
+      <argument>null</argument>
+      <argument type="collection">
+        <argument>json</argument>
+      </argument>
+      <argument>false</argument>
+      <argument>true</argument>
+    </service>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
     <service id="logger" class="Symfony\Component\HttpKernel\Log\Logger">
       <argument>null</argument>
       <argument>null</argument>
@@ -5451,12 +5912,15 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.QaaoWjx" method="withContext"/>
     </service>
+<<<<<<< HEAD
     <service id=".service_locator.QaaoWjx.App\Controller\SecurityController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\SecurityController"/>
       <argument>App\Controller\SecurityController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.QaaoWjx" method="withContext"/>
     </service>
+=======
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
     <service id=".service_locator.JI6krIU" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5542,13 +6006,21 @@
         <argument key="security.route_loader.logout" type="service_closure" id="security.route_loader.logout"/>
       </argument>
     </service>
+<<<<<<< HEAD
     <service id=".service_locator.PZ0UHmb" class="Symfony\Component\DependencyInjection\ServiceLocator">
+=======
+    <service id=".service_locator.bvmE8RF" class="Symfony\Component\DependencyInjection\ServiceLocator">
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="ReflectionType" type="service_closure" id="type_info.resolver.reflection_type"/>
         <argument key="ReflectionParameter" type="service_closure" id="type_info.resolver.reflection_parameter"/>
         <argument key="ReflectionProperty" type="service_closure" id="type_info.resolver.reflection_property"/>
         <argument key="ReflectionFunctionAbstract" type="service_closure" id="type_info.resolver.reflection_return"/>
+<<<<<<< HEAD
+=======
+        <argument key="string" type="service_closure" id="type_info.resolver.string"/>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
       </argument>
     </service>
     <service id=".service_locator.zqtiJAI" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -5598,7 +6070,10 @@
           <argument>App\Kernel</argument>
           <argument>App\Controller\HomePageController</argument>
           <argument>App\Controller\RegistrationController</argument>
+<<<<<<< HEAD
           <argument>App\Controller\SecurityController</argument>
+=======
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
           <argument>Doctrine\Bundle\DoctrineBundle\Controller\ProfilerController</argument>
         </argument>
       </call>
@@ -5635,6 +6110,7 @@
     <service id="debug.security.firewall.authenticator.main.inner" class="Symfony\Component\Security\Http\Firewall\AuthenticatorManagerListener">
       <argument type="service" id="security.authenticator.manager.main"/>
     </service>
+<<<<<<< HEAD
     <service id="var_dumper.contextualized_cli_dumper.inner" class="Symfony\Component\VarDumper\Dumper\CliDumper">
       <argument>null</argument>
       <argument>UTF-8</argument>
@@ -5645,6 +6121,8 @@
         </argument>
       </call>
     </service>
+=======
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
     <service id="debug.security.event_dispatcher.main.inner" class="Symfony\Component\EventDispatcher\EventDispatcher"/>
     <service id=".doctrine.orm.default_metadata_driver.inner" class="Doctrine\Persistence\Mapping\Driver\MappingDriverChain">
       <call method="addDriver">
@@ -5977,6 +6455,7 @@
       <argument>false</argument>
       <argument type="service_closure" id="security.command.user_password_hash"/>
     </service>
+<<<<<<< HEAD
     <service id=".var_dumper.command.server_dump.lazy" class="Symfony\Component\Console\Command\LazyCommand">
       <argument>server:dump</argument>
       <argument type="collection"/>
@@ -5984,6 +6463,8 @@
       <argument>false</argument>
       <argument type="service_closure" id="var_dumper.command.server_dump"/>
     </service>
+=======
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
     <service id=".maker.auto_command.make_auth.lazy" class="Symfony\Component\Console\Command\LazyCommand">
       <argument>make:auth</argument>
       <argument type="collection"/>
@@ -6180,7 +6661,11 @@
     </service>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <tag name="container.no_preload"/>
+<<<<<<< HEAD
       <argument type="service" id=".service_locator.BcTua.E"/>
+=======
+      <argument type="service" id=".service_locator.S6Z3Scb"/>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
       <argument type="collection">
         <argument key="about">console.command.about</argument>
         <argument key="assets:install">console.command.assets_install</argument>
@@ -6244,7 +6729,11 @@
         <argument key="lint:twig">twig.command.lint</argument>
         <argument key="debug:firewall">security.command.debug_firewall</argument>
         <argument key="security:hash-password">security.command.user_password_hash</argument>
+<<<<<<< HEAD
         <argument key="server:dump">var_dumper.command.server_dump</argument>
+=======
+        <argument key="nelmio:apidoc:dump">nelmio_api_doc.command.dump</argument>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
         <argument key="make:auth">maker.auto_command.make_auth</argument>
         <argument key="make:command">maker.auto_command.make_command</argument>
         <argument key="make:twig-component">maker.auto_command.make_twig_component</argument>
@@ -6277,7 +6766,11 @@
         <argument key="make:webhook">maker.auto_command.make_webhook</argument>
       </argument>
     </service>
+<<<<<<< HEAD
     <service id=".service_locator.BcTua.E" class="Symfony\Component\DependencyInjection\ServiceLocator">
+=======
+    <service id=".service_locator.S6Z3Scb" class="Symfony\Component\DependencyInjection\ServiceLocator">
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="console.command.about" type="service_closure" id=".console.command.about.lazy"/>
@@ -6342,7 +6835,11 @@
         <argument key="twig.command.lint" type="service_closure" id=".twig.command.lint.lazy"/>
         <argument key="security.command.debug_firewall" type="service_closure" id=".security.command.debug_firewall.lazy"/>
         <argument key="security.command.user_password_hash" type="service_closure" id=".security.command.user_password_hash.lazy"/>
+<<<<<<< HEAD
         <argument key="var_dumper.command.server_dump" type="service_closure" id=".var_dumper.command.server_dump.lazy"/>
+=======
+        <argument key="nelmio_api_doc.command.dump" type="service_closure" id="nelmio_api_doc.command.dump"/>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
         <argument key="maker.auto_command.make_auth" type="service_closure" id=".maker.auto_command.make_auth.lazy"/>
         <argument key="maker.auto_command.make_command" type="service_closure" id=".maker.auto_command.make_command.lazy"/>
         <argument key="maker.auto_command.make_twig_component" type="service_closure" id=".maker.auto_command.make_twig_component.lazy"/>
@@ -6485,6 +6982,7 @@
     <service id="security.user_checker.main" alias="security.user_checker"/>
     <service id="security.firewall.context_locator" alias=".service_locator.bsoXAxw"/>
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker"/>
+<<<<<<< HEAD
     <service id="SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface" alias="symfonycasts.verify_email.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
@@ -6492,6 +6990,18 @@
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface" alias="logger"/>
+=======
+    <service id="nelmio_api_doc.controller.swagger" alias="nelmio_api_doc.controller.swagger_json" public="true"/>
+    <service id="nelmio_api_doc.generator" alias="nelmio_api_doc.generator.default" public="true"/>
+    <service id="SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface" alias="symfonycasts.verify_email.helper"/>
+    <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
+    <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.B3ojDwc"/>
+    <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
+    <service id="twig.loader" alias="twig.loader.native_filesystem"/>
+    <service id="Psr\Log\LoggerInterface" alias="logger"/>
+    <service id=".service_locator.OePSu7n" alias="nelmio_api_doc.generator_locator"/>
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
     <service id=".service_locator.hUPzsWO" alias=".service_locator.ea.H0ae"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher" public="true"/>
     <service id="controller_resolver" alias="debug.controller_resolver"/>
@@ -6499,12 +7009,18 @@
     <service id="twig.error_renderer.html.inner" alias="error_handler.error_renderer.html"/>
     <service id="security.access.decision_manager" alias="debug.security.access.decision_manager"/>
     <service id="security.firewall.authenticator.main" alias="debug.security.firewall.authenticator.main"/>
+<<<<<<< HEAD
     <service id="var_dumper.cli_dumper" alias="var_dumper.contextualized_cli_dumper"/>
+=======
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
     <service id="security.event_dispatcher.main" alias="debug.security.event_dispatcher.main"/>
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id=".service_locator.diNoEIK" alias=".service_locator.4wc4Ag1"/>
     <service id=".service_locator._I.kJlJ" alias=".service_locator.QVAk1vM"/>
+<<<<<<< HEAD
     <service id=".service_locator...2Ndi3" alias=".service_locator.mXDaS5b"/>
+=======
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
     <service id=".service_locator.8s5Ceib" alias=".service_locator.QaaoWjx"/>
   </services>
 </container>

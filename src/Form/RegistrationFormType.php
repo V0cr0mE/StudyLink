@@ -11,7 +11,10 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
+<<<<<<< HEAD
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+=======
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
 
 class RegistrationFormType extends AbstractType
 {
@@ -19,6 +22,7 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('email')
+<<<<<<< HEAD
             ->add('username', TextType::class, [ // Utilisation correcte de TextType
                 'constraints' => [
                     new NotBlank([
@@ -31,6 +35,8 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
+=======
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
                 'constraints' => [

@@ -4,7 +4,11 @@
 
 namespace Composer\Autoload;
 
+<<<<<<< HEAD
 class ComposerStaticInit5405678fde4dbecdad04753e3ceff04a
+=======
+class ComposerStaticInit862b17dfa48aed6ade2f97dd81d75ad7
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
 {
     public static $files = array (
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
@@ -14,16 +18,28 @@ class ComposerStaticInit5405678fde4dbecdad04753e3ceff04a
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
+        'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '89efb1254ef2d1c5d80096acd12c4098' => __DIR__ . '/..' . '/twig/twig/src/Resources/core.php',
         'ffecb95d45175fd40f75be8a23b34f90' => __DIR__ . '/..' . '/twig/twig/src/Resources/debug.php',
         'c7baa00073ee9c61edf148c51917cfb4' => __DIR__ . '/..' . '/twig/twig/src/Resources/escaper.php',
         'f844ccf1d25df8663951193c3fc307c8' => __DIR__ . '/..' . '/twig/twig/src/Resources/string_loader.php',
+<<<<<<< HEAD
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
+=======
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
         '2203a247e6fda86070a5e4e07aed533a' => __DIR__ . '/..' . '/symfony/clock/Resources/now.php',
         '6a47392539ca2329373e0d33e1dba053' => __DIR__ . '/..' . '/symfony/polyfill-intl-icu/bootstrap.php',
     );
 
     public static $prefixLengthsPsr4 = array (
+        'p' => 
+        array (
+            'phpDocumentor\\Reflection\\' => 25,
+        ),
+        'W' => 
+        array (
+            'Webmozart\\Assert\\' => 17,
+        ),
         'T' => 
         array (
             'Twig\\' => 5,
@@ -93,6 +109,19 @@ class ComposerStaticInit5405678fde4dbecdad04753e3ceff04a
             'Psr\\Clock\\' => 10,
             'Psr\\Cache\\' => 10,
             'PhpParser\\' => 10,
+            'PHPStan\\PhpDocParser\\' => 21,
+        ),
+        'O' => 
+        array (
+            'OpenApi\\' => 8,
+        ),
+        'N' => 
+        array (
+            'Nelmio\\ApiDocBundle\\' => 20,
+        ),
+        'E' => 
+        array (
+            'Egulias\\EmailValidator\\' => 23,
         ),
         'E' => 
         array (
@@ -123,6 +152,16 @@ class ComposerStaticInit5405678fde4dbecdad04753e3ceff04a
     );
 
     public static $prefixDirsPsr4 = array (
+        'phpDocumentor\\Reflection\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+        ),
+        'Webmozart\\Assert\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
         'Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
@@ -367,6 +406,21 @@ class ComposerStaticInit5405678fde4dbecdad04753e3ceff04a
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
+<<<<<<< HEAD
+=======
+        'PHPStan\\PhpDocParser\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpstan/phpdoc-parser/src',
+        ),
+        'OpenApi\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zircote/swagger-php/src',
+        ),
+        'Nelmio\\ApiDocBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nelmio/api-doc-bundle/src',
+        ),
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
         'Egulias\\EmailValidator\\' => 
         array (
             0 => __DIR__ . '/..' . '/egulias/email-validator/src',
@@ -461,9 +515,15 @@ class ComposerStaticInit5405678fde4dbecdad04753e3ceff04a
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+<<<<<<< HEAD
             $loader->prefixLengthsPsr4 = ComposerStaticInit5405678fde4dbecdad04753e3ceff04a::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit5405678fde4dbecdad04753e3ceff04a::$prefixDirsPsr4;
             $loader->classMap = ComposerStaticInit5405678fde4dbecdad04753e3ceff04a::$classMap;
+=======
+            $loader->prefixLengthsPsr4 = ComposerStaticInit862b17dfa48aed6ade2f97dd81d75ad7::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit862b17dfa48aed6ade2f97dd81d75ad7::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit862b17dfa48aed6ade2f97dd81d75ad7::$classMap;
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
 
         }, null, ClassLoader::class);
     }
