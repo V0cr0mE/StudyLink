@@ -1,69 +1,87 @@
 {% extends './base.html.twig' %}
 
 {% block body %}
-	<div class="card-container">
-		<div class="grid--cell">
-			<article class="grid--item">
+    <div class="card-container">
+        <div class="grid--cell">
+            <article class="grid--item">
 
-				<div class="preview--container">
-					<a href="#" class="preview-image--container">
-						<div class="preview-image"></div>
-					</a>
+                <div class="preview--container">
+                    <a href="#" class="preview-image--container">
+                        <div class="preview-image"></div>
+                    </a>
 
-					<div class="meta--container">
-						<a href="#" class="issue">Issue XX</a>
-						<a href="#" class="page">Page YY</a>
-					</div>
-				</div>
+                    <div class="meta--container">
+                        <a href="#" class="issue">Issue XX</a>
+                        <a href="#" class="page">Page YY</a>
+                    </div>
+                </div>
 
-				<div class="content--container">
-					<div class="title--container">
-						<a class="title--text" href="#">Ossimu Quasi Alum</a>
-					</div>
+                <div class="content--container">
+                    <div class="title--container">
+                        <a class="title--text" href="#">Ossimu Quasi Alum</a>
+                    </div>
 
-					<div class="tags--overflow-container">
-						<ul class="tags--container">
-							<li>
-								<a href="#" class="tag">Delect a Distinctio</a>
-							</li>
-							<li>
-								<a href="#" class="tag ellipsis">
-									<i class="far fa-ellipsis-h"></i>
-								</a>
-							</li>
-						</ul>
-					</div>
+                    <div class="tags--overflow-container">
+                        <ul class="tags--container">
+                            <li>
+                                <a href="#" class="tag">Delect a Distinctio</a>
+                            </li>
+                            <li>
+                                <a href="#" class="tag ellipsis">
+                                    <i class="far fa-ellipsis-h"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
 
-					<div class="hover--options">
+                    <div class="hover--options">
+                        <a href="#" class="series button">
+                            <span class="icon-title">
+                                <i class="fad fa-books"></i>
+                                Series</span>
+                            <span class="new-tab">
+                                <i class="fas fa-arrow-circle-right"></i>
+                            </span>
+                        </a>
 
-						<a href="#" class="series button">
-							<span class="icon-title">
-								<i class="fad fa-books"></i>
-								Series</span>
-							<span class="new-tab">
-								<i class="fas fa-arrow-circle-right"></i>
-							</span>
-						</a>
+                        <a href="#" class="latest button">
+                            <span class="icon-title">
+                                <i class="far fa-image"></i>
+                                Latest</span>
+                            <span class="new-tab">
+                                <i class="fas fa-arrow-circle-right"></i>
+                            </span>
+                        </a>
 
-						<a href="#" class="latest button">
-							<span class="icon-title">
-								<i class="far fa-image"></i>
-								Latest</span>
-							<span class="new-tab">
-								<i class="fas fa-arrow-circle-right"></i>
-							</span>
-						</a>
+                        <a href="#" class="follow button">
+                            <i class="fas fa-plus"></i>
+                        </a>
+                    </div>
+                </div>
 
-						<a href="#" class="follow button">
-							<i class="fas fa-plus"></i>
-						</a>
-					</div>
-				</div>
+            </article>
+        </div>
+    </div>
 
-			</article>
-		</div>
-	</div>
+    <h2>Créer un Post</h2>
+    <form action="/submit-post" method="POST" enctype="multipart/form-data">
+        
+        <label for="titre">Titre :</label><br>
+        <input type="text" id="titre" name="titre" required><br><br>
+
+        <label for="description">Description :</label><br>
+        <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+
+        <label for="date">Date :</label><br>
+        <input type="date" id="date" name="date" required><br><br>
+
+        <label for="photo">Photo :</label><br>
+        <input type="file" id="photo" name="photo" accept="image/*" required><br><br>
+
+        <button type="submit">Soumettre</button>
+    </form>
 {% endblock %}
+
 {% block javascripts %}
-	<script src="{{ asset('JS/posts.html') }}"></script>
+    <script src="{{ asset('JS/posts.html') }}"></script>
 {% endblock %}
