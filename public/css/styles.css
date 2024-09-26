@@ -266,15 +266,7 @@ a {
     justify-content: center;
 }
 
-.dropdown-content input[type="text"],
-.dropdown-content input[type="password"] {
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.dropdown-content button {
+.dropdown-content a {
     padding: 10px;
     border: none;
     cursor: pointer;
