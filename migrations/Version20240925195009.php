@@ -30,6 +30,7 @@ final class Version20240925195009 extends AbstractMigration
         $this->addSql('ALTER TABLE likes ADD CONSTRAINT FK_49CA4E7DE85F12B8 FOREIGN KEY (post_id_id) REFERENCES post (id)');
         $this->addSql('ALTER TABLE likes ADD CONSTRAINT FK_49CA4E7D27525DA3 FOREIGN KEY (ussr_id_id) REFERENCES User (id)');
         $this->addSql('ALTER TABLE post ADD CONSTRAINT FK_5A8A6C8D9D86650F FOREIGN KEY (user_id_id) REFERENCES User (id)');
+        $this->addSql('ALTER TABLE user DROP username');
     }
 
     public function down(Schema $schema): void
@@ -45,5 +46,6 @@ final class Version20240925195009 extends AbstractMigration
         $this->addSql('DROP TABLE likes');
         $this->addSql('DROP TABLE post');
         $this->addSql('DROP TABLE User');
+        $this->addSql('ALTER TABLE user ADD username VARCHAR(255) NOT NULL');
     }
 }
