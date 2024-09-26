@@ -12,6 +12,7 @@
                 <th>Email</th>
                 <th>Roles</th>
                 <th>Password</th>
+                <th>Username</th>
                 <th>IsVerified</th>
                 <th>actions</th>
             </tr>
@@ -23,6 +24,7 @@
                 <td>{{ User.email }}</td>
                 <td>{{ User.roles ? User.roles|json_encode : '' }}</td>
                 <td>{{ User.password }}</td>
+                <td>{{ User.username }}</td>
                 <td>{{ User.isVerified ? 'Yes' : 'No' }}</td>
                 <td>
                     <a href="{{ path('app_admin_user_show', {'id': User.id}) }}">show</a>
