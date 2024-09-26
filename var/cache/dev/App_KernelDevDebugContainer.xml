@@ -204,6 +204,7 @@
     <service id="App\Controller\HomePageController" class="App\Controller\HomePageController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
+      <argument type="service" id="App\Repository\PostRepository"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.QaaoWjx.App\Controller\HomePageController"/>
       </call>

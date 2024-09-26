@@ -18,15 +18,15 @@ class Post
     private ?string $title = null;
 
     #[ORM\Column(nullable: true)]
-    private ?int $picture = null;
+    private ?string $picture = null; 
 
     #[ORM\Column(nullable: true)]
     private ?int $likes_count = null;
 
-    #[ORM\Column]
+    #[ORM\Column(type: Types::DATETIME_IMMUTABLE)]
     private ?\DateTimeImmutable $created_at = null;
 
-    #[ORM\Column]
+    #[ORM\Column(type: Types::DATETIME_IMMUTABLE)]
     private ?\DateTimeImmutable $updated_at = null;
 
     public function getId(): ?int
@@ -42,19 +42,17 @@ class Post
     public function setTitle(?string $title): static
     {
         $this->title = $title;
-
         return $this;
     }
 
-    public function getPicture(): ?int
+    public function getPicture(): ?string
     {
         return $this->picture;
     }
 
-    public function setPicture(?int $picture): static
+    public function setPicture(?string $picture): static
     {
         $this->picture = $picture;
-
         return $this;
     }
 
@@ -66,7 +64,6 @@ class Post
     public function setLikesCount(?int $likes_count): static
     {
         $this->likes_count = $likes_count;
-
         return $this;
     }
 
@@ -78,7 +75,6 @@ class Post
     public function setCreatedAt(\DateTimeImmutable $created_at): static
     {
         $this->created_at = $created_at;
-
         return $this;
     }
 
@@ -90,7 +86,6 @@ class Post
     public function setUpdatedAt(\DateTimeImmutable $updated_at): static
     {
         $this->updated_at = $updated_at;
-
         return $this;
     }
 }

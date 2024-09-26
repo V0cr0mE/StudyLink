@@ -40,4 +40,11 @@ class PostRepository extends ServiceEntityRepository
     //            ->getOneOrNullResult()
     //        ;
     //    }
+    /**
+     * @return Post[] Returns an array of Post objects
+     */
+    public function findAllPosts(): array
+    {
+        return $this->findAll(); // Récupère tous les posts
+    }
 }
