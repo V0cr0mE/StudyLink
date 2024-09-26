@@ -22,7 +22,7 @@ class Likes
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?user $ussr_id = null;
+    private ?User $ussr_id = null;
 
     public function getId(): ?int
     {
@@ -53,12 +53,12 @@ class Likes
         return $this;
     }
 
-    public function getUssrId(): ?user
+    public function getUssrId(): ?User
     {
         return $this->ussr_id;
     }
 
-    public function setUssrId(?user $ussr_id): static
+    public function setUssrId(?User $ussr_id): static
     {
         $this->ussr_id = $ussr_id;
 

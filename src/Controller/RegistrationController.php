@@ -26,8 +26,8 @@ class RegistrationController extends AbstractController
     #[Route('/register', name: 'app_register')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
-        $user = new User();
-        $form = $this->createForm(RegistrationFormType::class, $user);
+        $User = new User();
+        $form = $this->createForm(RegistrationFormType::class, $User);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -35,20 +35,20 @@ class RegistrationController extends AbstractController
             $plainPassword = $form->get('plainPassword')->getData();
 
             // Encode le mot de passe
-            $user->setPassword($userPasswordHasher->hashPassword($user, $plainPassword));
+            $User->setPassword($userPasswordHasher->hashPassword($User, $plainPassword));
 
             // Persiste l'utilisateur dans la base de données
-            $entityManager->persist($user);
+            $entityManager->persist($User);
             $entityManager->flush();
 
             // Génère une URL signée et l'envoie à l'utilisateur
-            $this->logger->info('Sending confirmation email to: ' . $user->getEmail());
+            $this->logger->info('Sending confirmation email to: ' . $User->getEmail());
             $this->emailVerifier->sendEmailConfirmation(
                 'app_verify_email',
-                $user,
+                $User,
                 (new TemplatedEmail())
                     ->from(new Address('no-reply@studylink.com', 'no-reply'))
-                    ->to((string) $user->getEmail())
+                    ->to((string) $User->getEmail())
                     ->subject('Please Confirm your Email')
                     ->htmlTemplate('registration/confirmation_email.html.twig')
             );
@@ -67,9 +67,9 @@ class RegistrationController extends AbstractController
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
         try {
-            /** @var User $user */
-            $user = $this->getUser();
-            $this->emailVerifier->handleEmailConfirmation($request, $user);
+            /** @var User $User */
+            $User = $this->getUser();
+            $this->emailVerifier->handleEmailConfirmation($request, $User);
         } catch (VerifyEmailExceptionInterface $exception) {
             $this->addFlash('verify_email_error', $exception->getReason());
             return $this->redirectToRoute('app_register');

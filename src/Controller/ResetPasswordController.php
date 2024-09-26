@@ -53,13 +53,13 @@ class ResetPasswordController extends AbstractController
     }
 
     /**
-     * Confirmation page after a user has requested a password reset.
+     * Confirmation page after a User has requested a password reset.
      */
     #[Route('/check-email', name: 'app_check_email')]
     public function checkEmail(): Response
     {
-        // Generate a fake token if the user does not exist or someone hit this page directly.
-        // This prevents exposing whether or not a user was found with the given email address or not
+        // Generate a fake token if the User does not exist or someone hit this page directly.
+        // This prevents exposing whether or not a User was found with the given email address or not
         if (null === ($resetToken = $this->getTokenObjectFromSession())) {
             $resetToken = $this->resetPasswordHelper->generateFakeResetToken();
         }
@@ -70,7 +70,7 @@ class ResetPasswordController extends AbstractController
     }
 
     /**
-     * Validates and process the reset URL that the user clicked in their email.
+     * Validates and process the reset URL that the User clicked in their email.
      */
     #[Route('/reset/{token}', name: 'app_reset_password')]
     public function reset(Request $request, UserPasswordHasherInterface $passwordHasher, ?string $token = null): Response
@@ -90,8 +90,8 @@ class ResetPasswordController extends AbstractController
         }
 
         try {
-            /** @var User $user */
-            $user = $this->resetPasswordHelper->validateTokenAndFetchUser($token);
+            /** @var User $User */
+            $User = $this->resetPasswordHelper->validateTokenAndFetchUser($token);
         } catch (ResetPasswordExceptionInterface $e) {
             $this->addFlash('reset_password_error', sprintf(
                 '%s - %s',
@@ -102,7 +102,7 @@ class ResetPasswordController extends AbstractController
             return $this->redirectToRoute('app_forgot_password_request');
         }
 
-        // The token is valid; allow the user to change their password.
+        // The token is valid; allow the User to change their password.
         $form = $this->createForm(ChangePasswordFormType::class);
         $form->handleRequest($request);
 
@@ -114,7 +114,7 @@ class ResetPasswordController extends AbstractController
             $plainPassword = $form->get('plainPassword')->getData();
 
             // Encode(hash) the plain password, and set it.
-            $user->setPassword($passwordHasher->hashPassword($user, $plainPassword));
+            $User->setPassword($passwordHasher->hashPassword($User, $plainPassword));
             $this->entityManager->flush();
 
             // The session is cleaned up after the password has been changed.
@@ -130,21 +130,21 @@ class ResetPasswordController extends AbstractController
 
     private function processSendingPasswordResetEmail(string $emailFormData, MailerInterface $mailer): RedirectResponse
     {
-        $user = $this->entityManager->getRepository(User::class)->findOneBy([
+        $User = $this->entityManager->getRepository(User::class)->findOneBy([
             'email' => $emailFormData,
         ]);
 
-        // Do not reveal whether a user account was found or not.
-        if (!$user) {
+        // Do not reveal whether a User account was found or not.
+        if (!$User) {
             return $this->redirectToRoute('app_check_email');
         }
 
         try {
-            $resetToken = $this->resetPasswordHelper->generateResetToken($user);
+            $resetToken = $this->resetPasswordHelper->generateResetToken($User);
         } catch (ResetPasswordExceptionInterface $e) {
-            // If you want to tell the user why a reset email was not sent, uncomment
+            // If you want to tell the User why a reset email was not sent, uncomment
             // the lines below and change the redirect to 'app_forgot_password_request'.
-            // Caution: This may reveal if a user is registered or not.
+            // Caution: This may reveal if a User is registered or not.
             //
             // $this->addFlash('reset_password_error', sprintf(
             //     '%s - %s',
@@ -157,7 +157,7 @@ class ResetPasswordController extends AbstractController
 
         $email = (new TemplatedEmail())
             ->from(new Address('no-reply@studylink.com', 'no-reply'))
-            ->to((string) $user->getEmail())
+            ->to((string) $User->getEmail())
             ->subject('Your password reset request')
             ->htmlTemplate('reset_password/email.html.twig')
             ->context([
