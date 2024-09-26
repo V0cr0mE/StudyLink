@@ -12,16 +12,26 @@
             <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
         {% endfor %}
 
-        <h1>Register</h1>
+        <h1>Registration</h1>
 
         {{ form_errors(registrationForm) }}
 
         {{ form_start(registrationForm) }}
-            {{ form_row(registrationForm.email) }}
-            {{ form_row(registrationForm.plainPassword, {
-                label: 'Password'
-            }) }}
-            {{ form_row(registrationForm.agreeTerms) }}
+            <div class="email">
+                {{ form_label(registrationForm.email) }}
+                {{ form_widget(registrationForm.email, {'attr': {'class':'size'}}) }}
+
+            </div>
+
+            <div class="password">
+                {{ form_label(registrationForm.plainPassword, "Password") }}
+                {{ form_widget(registrationForm.plainPassword, {'attr': {'class':'size'}})}}
+            </div>
+
+            <div class="agree">
+                {{ form_label(registrationForm.agreeTerms) }}
+                {{ form_widget(registrationForm.agreeTerms, {'attr': {'class':'boxe'}}) }}
+            </div>
 
             <button type="submit" class="btn">Register</button>
         {{ form_end(registrationForm) }}
