@@ -3,7 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Post;
-use App\Entity\user;
+use App\Entity\User;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -24,7 +24,7 @@ class PostType extends AbstractType
                 'widget' => 'single_text',
             ])
             ->add('user_id', EntityType::class, [
-                'class' => user::class,
+                'class' => User::class,
                 'choice_label' => 'id',
             ])
         ;
