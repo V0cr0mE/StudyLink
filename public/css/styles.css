@@ -56,6 +56,22 @@ body {
     margin: 0;
 }
 
+.hero {
+    background-image: url('css/images/background-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Full height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
 button,
 a {
     cursor: pointer;
@@ -79,11 +95,11 @@ a {
     font-family: "DM Sans", sans-serif;
 }
 
-.app-content {
+/* .app-content {
     display: flex;
     overflow: hidden;
     padding: 16px 24px 24px 0;
-}
+} */
 
 .app-header {
     display: flex;
@@ -997,6 +1013,8 @@ a {
     margin-top: 10px;
     right: 0%;
 }
+
+
 /* 
 .imputlogin{
     max-width: 85%;

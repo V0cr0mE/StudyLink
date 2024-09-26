@@ -6,6 +6,7 @@
 
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('CSS/register.css') }}">
+    <link rel="stylesheet" href="{{ asset('CSS/styles.css') }}">
 {% endblock %}
 
 
@@ -26,22 +27,17 @@
             <div class="email">
                 {{ form_label(registrationForm.email) }}
                 {{ form_widget(registrationForm.email, {'attr': {'class':'size'}}) }}
-
-
             </div>
-
 
             <div class="password">
                 {{ form_label(registrationForm.plainPassword, "Password") }}
                 {{ form_widget(registrationForm.plainPassword, {'attr': {'class':'size'}})}}
             </div>
 
-
             <div class="agree">
                 {{ form_label(registrationForm.agreeTerms) }}
                 {{ form_widget(registrationForm.agreeTerms, {'attr': {'class':'boxe'}}) }}
             </div>
-
 
             <button type="submit" class="btn">Register</button>
         {{ form_end(registrationForm) }}
