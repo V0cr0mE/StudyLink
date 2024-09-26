@@ -57,15 +57,39 @@ body {
 }
 
 .hero {
-    background-image: url('css/images/background-hero.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh; /* Full height */
+    height: 92vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
     text-align: center;
+}
+
+h3 {
+    font-size: 28px;
+    font-weight: 100;
+    line-height: 36px;
+    margin: 40px;
+    padding: 30px 280px 20px;
+}
+
+.btn-add-post {
+        margin-top: 10px;
+        margin-left: 20px;
+        border: solid 1px #DB485A;
+        border-radius: 25px;
+        background-color: #DB485A;
+        color: white;
+        width: 150px;
+        height: 40px;
+        transition: 0.5s;
+        padding-top: 8px;
+      }
+      
+      .btn:hover {
+          color: white;
+          border: solid 1px #db4859a3;
 }
 
 a {
