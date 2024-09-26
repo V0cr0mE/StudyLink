@@ -14,8 +14,9 @@
 		<div class="app-container">
 			<div class="app-header">
 				<div class="app-header-left">
-					<span class="app-icon"></span>
-					<p class="app-name">StudyLink</p>
+					<a href="{{ path('app_home_page') }}">
+						<img src="{{ asset('css/images/logo.png') }}" alt="Logo" width="100" height="auto">
+					</a>
 				</div>
 				<div class="app-header-right">
 					<button class="mode-switch" title="Switch Theme">
@@ -25,6 +26,7 @@
 						</svg>
 					</button>
 					<button class="add-btn" title="Add New Project" href="{{ path('app_admin_post_new') }}">
+
 						<svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
 							<line x1="12" y1="5" x2="12" y2="19"/>
 							<line x1="5" y1="12" x2="19" y2="12"/></svg>
@@ -44,7 +46,6 @@
 				</button> #}
 
 			</div>
-
 		</div>
 		<div class="app-content"> {% block body %}{% endblock %}
 			</div>
