@@ -4,7 +4,11 @@
 
 namespace Composer\Autoload;
 
+<<<<<<< Updated upstream
 class ComposerStaticInit8116c249f0b4dbcd995d077b53ca826b
+=======
+class ComposerStaticInitea7ec3ab5e82ceec8ab9aa1b9b35f086
+>>>>>>> Stashed changes
 {
     public static $files = array (
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
@@ -441,9 +445,15 @@ class ComposerStaticInit8116c249f0b4dbcd995d077b53ca826b
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+<<<<<<< Updated upstream
             $loader->prefixLengthsPsr4 = ComposerStaticInit8116c249f0b4dbcd995d077b53ca826b::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit8116c249f0b4dbcd995d077b53ca826b::$prefixDirsPsr4;
             $loader->classMap = ComposerStaticInit8116c249f0b4dbcd995d077b53ca826b::$classMap;
+=======
+            $loader->prefixLengthsPsr4 = ComposerStaticInitea7ec3ab5e82ceec8ab9aa1b9b35f086::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitea7ec3ab5e82ceec8ab9aa1b9b35f086::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitea7ec3ab5e82ceec8ab9aa1b9b35f086::$classMap;
+>>>>>>> Stashed changes
 
         }, null, ClassLoader::class);
     }

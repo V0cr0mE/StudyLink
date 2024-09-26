@@ -1,5 +1,6 @@
-controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+# config/routes.yaml
+
+# Route for the homepage
+app_home_page:
+    path: /
+    controller: App\Controller\HomePageController::index

@@ -3,7 +3,11 @@
         'name' => 'symfony/skeleton',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
+<<<<<<< Updated upstream
         'reference' => 'c6f707a8287c132b09880bd4d215489a4d6dfd43',
+=======
+        'reference' => 'e114338a1ec2b120b5e02447d9d4683eb8ba5555',
+>>>>>>> Stashed changes
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -664,7 +668,11 @@
         'symfony/skeleton' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
+<<<<<<< Updated upstream
             'reference' => 'c6f707a8287c132b09880bd4d215489a4d6dfd43',
+=======
+            'reference' => 'e114338a1ec2b120b5e02447d9d4683eb8ba5555',
+>>>>>>> Stashed changes
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
