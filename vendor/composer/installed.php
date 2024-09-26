@@ -3,7 +3,15 @@
         'name' => 'symfony/skeleton',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
+<<<<<<< HEAD
         'reference' => '24af0313b18db78d26ff609e483d2d7785c46b0f',
+=======
+<<<<<<< HEAD
+        'reference' => 'e27284b256fbdb36ce03e05340bd9e51b6402665',
+=======
+        'reference' => '2aaf2b13186679c89ccb9067ee21b6009e23e02e',
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
+>>>>>>> nouveau_dépard
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -136,6 +144,20 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+<<<<<<< HEAD
+=======
+        'egulias/email-validator' => array(
+            'pretty_version' => '4.0.2',
+            'version' => '4.0.2.0',
+            'reference' => 'ebaaf5be6c0286928352e054f2d5125608e5405e',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../egulias/email-validator',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+<<<<<<< HEAD
+=======
+>>>>>>> nouveau_dépard
         'nelmio/api-doc-bundle' => array(
             'pretty_version' => 'v4.31.0',
             'version' => '4.31.0.0',
@@ -145,6 +167,10 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+<<<<<<< HEAD
+=======
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
+>>>>>>> nouveau_dépard
         'nikic/php-parser' => array(
             'pretty_version' => 'v5.2.0',
             'version' => '5.2.0.0',
@@ -331,6 +357,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'symfony/debug-bundle' => array(
+            'pretty_version' => 'v7.1.1',
+            'version' => '7.1.1.0',
+            'reference' => 'aa024d28ce7ce0c6a16ee57c066838bece92893f',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../symfony/debug-bundle',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
         'symfony/dependency-injection' => array(
             'pretty_version' => 'v7.1.5',
             'version' => '7.1.5.0',
@@ -427,6 +462,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'symfony/form' => array(
+            'pretty_version' => 'v7.1.5',
+            'version' => '7.1.5.0',
+            'reference' => '6b8b53ad6d42f14b158c896163b96ff260d78222',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/form',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'symfony/framework-bundle' => array(
             'pretty_version' => 'v7.1.5',
             'version' => '7.1.5.0',
@@ -454,6 +498,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'symfony/mailer' => array(
+            'pretty_version' => 'v7.1.5',
+            'version' => '7.1.5.0',
+            'reference' => 'bbf21460c56f29810da3df3e206e38dfbb01e80b',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/mailer',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'symfony/maker-bundle' => array(
             'pretty_version' => 'v1.61.0',
             'version' => '1.61.0.0',
@@ -463,6 +516,18 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
+<<<<<<< HEAD
+=======
+        'symfony/mime' => array(
+            'pretty_version' => 'v7.1.5',
+            'version' => '7.1.5.0',
+            'reference' => '711d2e167e8ce65b05aea6b258c449671cdd38ff',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/mime',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+>>>>>>> nouveau_dépard
         'symfony/options-resolver' => array(
             'pretty_version' => 'v7.1.1',
             'version' => '7.1.1.0',
@@ -499,6 +564,24 @@
             'reference' => 'b9123926e3b7bc2f98c02ad54f6a4b02b91a8abe',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/polyfill-intl-grapheme',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'symfony/polyfill-intl-icu' => array(
+            'pretty_version' => 'v1.31.0',
+            'version' => '1.31.0.0',
+            'reference' => 'd80a05e9904d2c2b9b95929f3e4b5d3a8f418d78',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/polyfill-intl-icu',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'symfony/polyfill-intl-idn' => array(
+            'pretty_version' => 'v1.31.0',
+            'version' => '1.31.0.0',
+            'reference' => 'c36586dcf89a12315939e00ec9b4474adcb1d773',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/polyfill-intl-idn',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -664,7 +747,15 @@
         'symfony/skeleton' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
+<<<<<<< HEAD
             'reference' => '24af0313b18db78d26ff609e483d2d7785c46b0f',
+=======
+<<<<<<< HEAD
+            'reference' => 'e27284b256fbdb36ce03e05340bd9e51b6402665',
+=======
+            'reference' => '2aaf2b13186679c89ccb9067ee21b6009e23e02e',
+>>>>>>> 14cc1787d0d93622152c2e4e0fdfd2e3ba306e25
+>>>>>>> nouveau_dépard
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -724,6 +815,18 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+<<<<<<< HEAD
+=======
+        'symfony/validator' => array(
+            'pretty_version' => 'v7.1.5',
+            'version' => '7.1.5.0',
+            'reference' => 'e57592782dc2a86997477f28164c51af53512ad8',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/validator',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+>>>>>>> nouveau_dépard
         'symfony/var-dumper' => array(
             'pretty_version' => 'v7.1.5',
             'version' => '7.1.5.0',
@@ -742,12 +845,30 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'symfony/web-profiler-bundle' => array(
+            'pretty_version' => 'v7.1.4',
+            'version' => '7.1.4.0',
+            'reference' => '3cfc775277a8f2dacdd0f72d196bc87b272a763f',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../symfony/web-profiler-bundle',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
         'symfony/yaml' => array(
             'pretty_version' => 'v7.1.5',
             'version' => '7.1.5.0',
             'reference' => '4e561c316e135e053bd758bf3b3eb291d9919de4',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/yaml',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'symfonycasts/verify-email-bundle' => array(
+            'pretty_version' => 'v1.17.0',
+            'version' => '1.17.0.0',
+            'reference' => 'f72af149070b39ef82a7095074378d0a98b4d2ef',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../symfonycasts/verify-email-bundle',
             'aliases' => array(),
             'dev_requirement' => false,
         ),

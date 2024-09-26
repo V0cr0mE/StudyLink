@@ -3,12 +3,23 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+<<<<<<< HEAD
 use Doctrine\ORM\Mapping as ORM;
+=======
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+>>>>>>> nouveau_dépard
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_EMAIL', fields: ['email'])]
+<<<<<<< HEAD
+=======
+#[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
+>>>>>>> nouveau_dépard
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -31,6 +42,26 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?string $password = null;
 
+<<<<<<< HEAD
+=======
+    #[ORM\Column(length: 255, nullable: false)]
+    private ?string $username = null;
+
+    /**
+     * @var Collection<int, Post>
+     */
+    #[ORM\OneToMany(targetEntity: Post::class, mappedBy: 'user_id')]
+    private Collection $posts;
+
+    #[ORM\Column]
+    private bool $isVerified = false;
+
+    public function __construct()
+    {
+        $this->posts = new ArrayCollection();
+    }
+
+>>>>>>> nouveau_dépard
     public function getId(): ?int
     {
         return $this->id;
@@ -105,4 +136,61 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
     }
+<<<<<<< HEAD
+=======
+
+    public function getUsername(): ?string
+    {
+        return $this->username;
+    }
+
+    public function setUsername(string $username): static
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Post>
+     */
+    public function getPosts(): Collection
+    {
+        return $this->posts;
+    }
+
+    public function addPost(Post $post): static
+    {
+        if (!$this->posts->contains($post)) {
+            $this->posts->add($post);
+            $post->setUserId($this);
+        }
+
+        return $this;
+    }
+
+    public function removePost(Post $post): static
+    {
+        if ($this->posts->removeElement($post)) {
+            // set the owning side to null (unless already changed)
+            if ($post->getUserId() === $this) {
+                $post->setUserId(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function isVerified(): bool
+    {
+        return $this->isVerified;
+    }
+
+    public function setVerified(bool $isVerified): static
+    {
+        $this->isVerified = $isVerified;
+
+        return $this;
+    }
+>>>>>>> nouveau_dépard
 }
