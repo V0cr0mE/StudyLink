@@ -10,10 +10,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use DateTimeImmutable;
 
 #[Route('/admin/post')]
 final class AdminPostController extends AbstractController
 {
+
     #[Route(name: 'app_admin_post_index', methods: ['GET'])]
     public function index(PostRepository $postRepository): Response
     {
@@ -26,6 +28,19 @@ final class AdminPostController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $post = new Post();
+        $post->setCreatedAt(new DateTimeImmutable());
+        $post->setUpdatedAt(new DateTimeImmutable());
+
+        $user = $this->getUser();
+
+        // Associer l'utilisateur connecté au post
+        if ($user) {
+            $post->setUserId($user); // Assurez-vous que la méthode setUser existe dans l'entité Post
+        } else {
+            // Si aucun utilisateur n'est connecté, vous pouvez gérer cela (par exemple, lancer une exception ou rediriger)
+            throw new \Exception('L\'utilisateur doit être connecté pour créer un post.');
+        }
+
         $form = $this->createForm(PostType::class, $post);
         $form->handleRequest($request);
 
