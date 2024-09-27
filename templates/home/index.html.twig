@@ -3,72 +3,38 @@
 {% block body %}
 	<div class="hero">
 		<img src="{{ asset('css/images/logo.svg') }}" alt="Logo" width="700" height="auto">
-		<h3>Créez vos Events afin de faciliter la mise en relation entre apprenants au sein de votre campus </h3>
+		<h3>Créez vos Events afin de faciliter la mise en relation entre apprenants au sein de votre campus
+		</h3>
 		<a class="btn-add-post" href="{{ path('app_admin_post_new') }}">Ajouter un post</a>
 	</div>
-	<div class="card-container">
-		<div class="grid--cell">
-			<article class="grid--item">
 
-				<div class="preview--container">
-					<a href="#" class="preview-image--container">
-						<div class="preview-image"></div>
-					</a>
+	{% for post in posts %}
+		<div class="card-container">
+			<div class="grid--cell">
+				<article class="grid--item">
 
-					<div class="meta--container">
-						<a href="#" class="issue">Issue XX</a>
-						<a href="#" class="page">Page YY</a>
-					</div>
-				</div>
-
-				<div class="content--container">
-					<div class="title--container">
-						<a class="title--text" href="#">Ossimu Quasi Alum</a>
-					</div>
-
-					<div class="tags--overflow-container">
-						<ul class="tags--container">
-							<li>
-								<a href="#" class="tag">Delect a Distinctio</a>
-							</li>
-							<li>
-								<a href="#" class="tag ellipsis">
-									<i class="far fa-ellipsis-h"></i>
-								</a>
-							</li>
-						</ul>
-					</div>
-
-					<div class="hover--options">
-
-						<a href="#" class="series button">
-							<span class="icon-title">
-								<i class="fad fa-books"></i>
-								Series</span>
-							<span class="new-tab">
-								<i class="fas fa-arrow-circle-right"></i>
-							</span>
-						</a>
-
-						<a href="#" class="latest button">
-							<span class="icon-title">
-								<i class="far fa-image"></i>
-								Latest</span>
-							<span class="new-tab">
-								<i class="fas fa-arrow-circle-right"></i>
-							</span>
-						</a>
-
-						<a href="#" class="follow button">
-							<i class="fas fa-plus"></i>
+					<div class="preview--container">
+						<a href="#" class="preview-image--container">
+							<div class="preview-image">{{ post.picture }}</div>
 						</a>
 					</div>
-				</div>
 
-			</article>
+					<div class="content--container">
+						<div class="title--container">
+							<a class="title--text" href="#">{{ post.title }}</a>
+						</div>
+						<p>{{ post.content }}</p>
+
+					</div>
+
+				</article>
+			</div>
 		</div>
-	</div>
+	{% else %}
+		<li>Aucun post disponible pour le moment.</li>
+	{% endfor %}
+
 {% endblock %}
 {% block javascripts %}
-	<script src="{{ asset('JS/posts.html') }}"></script>
+	 <script src="{{ asset('JS/posts.html') }}"></script>
 {% endblock %}

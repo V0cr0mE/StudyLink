@@ -36,9 +36,6 @@ final class AdminPostController extends AbstractController
         // Associer l'utilisateur connecté au post
         if ($user) {
             $post->setUserId($user); // Assurez-vous que la méthode setUser existe dans l'entité Post
-        } else {
-            // Si aucun utilisateur n'est connecté, vous pouvez gérer cela (par exemple, lancer une exception ou rediriger)
-            throw new \Exception('L\'utilisateur doit être connecté pour créer un post.');
         }
 
         $form = $this->createForm(PostType::class, $post);

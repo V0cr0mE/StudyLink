@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}*
+{% extends 'post/index.html.twig' %}
+
+{% block title %}Liste des Posts
+{% endblock %}
+
+{% block body %}
+	{% block posts %}
+		<h1>Liste des Posts</h1>
+
+		<ul>
+			{% for post in posts %}
+				<li>
+					<div class="title--container">
+						<h2 class="title--text">{{ post.title }}</h2>
+					</div>
+
+					<p>{{ post.content }}</p>
+					<p>Publié le
+						{{ post.createdAt|date('d-m-Y H:i') }}</p>
+				</li>
+			{% else %}
+				<li>Aucun post disponible pour le moment.</li>
+			{% endfor %}
+		</ul>
+	{% endblock %}
+
+{% endblock %}
