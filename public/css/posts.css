@@ -1,10 +1,11 @@
 /* Styles pour les posts dans le bloc body */
 .grid--cell {
-    margin: 20px;
+    margin: 20px auto;
     max-width: 300px; /* Limite la largeur des articles */
 }
 
 .grid--item {
+    min-height: 340px;
     background-color: #f9f9f9; /* Fond clair pour les articles */
     border: 1px solid #ddd; /* Bordure légère */
     border-radius: 8px; /* Coins arrondis */
@@ -55,10 +56,12 @@
 }
 
 .title--container {
+    margin-top: 10px;
     padding: 10px;
 }
 
 .title--text {
+    font-weight: 800;
     font-size: 1.2em; /* Taille de police plus grande */
     color: #333; /* Couleur du texte */
     text-decoration: none; /* Supprime le soulignement */
@@ -124,9 +127,17 @@
 }
 
 .card-container{
-	margin: 0 auto;
+	margin: 30px 50px;
 	display: flex;
-	flex-wrap: wrap;
-    overflow: hidden;
-    padding: 30px;
+	display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+p{
+    width: 175px;
+    padding-left: 10px;
+    margin-top: 10px;
+    font-size: 14px;
 }

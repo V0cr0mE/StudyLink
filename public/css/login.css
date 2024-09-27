@@ -43,7 +43,7 @@ h1 {
     border-radius: 25px;
     background-color: white;
     color: #db4859a3;
-    width: 115px;
+    width: 260px;
     height: 30px;
     transition: 0.5s;
 }
@@ -62,7 +62,7 @@ h1 {
     border-radius: 25px;
     background-color: white;
     color: #db4859a3;
-    width: 115px;
+    width: 280px;
     height: 30px;
     transition: 0.5s;
 }
@@ -75,4 +75,6 @@ h1 {
 .btns {
     display: flex;
     align-items: center;
+    width: 280px;
+    height: 30px;
 }
