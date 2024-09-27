@@ -40,4 +40,12 @@ class PostRepository extends ServiceEntityRepository
     //            ->getOneOrNullResult()
     //        ;
     //    }
+    public function findAllPosts(): array
+    {
+        return $this->createQueryBuilder('p')
+            ->orderBy('p.id', 'ASC') // Tu peux personnaliser l'ordre si besoin
+            ->getQuery()
+            ->getResult();
+    }
+
 }
