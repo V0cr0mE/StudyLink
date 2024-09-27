@@ -48,7 +48,7 @@ final class AdminPostController extends AbstractController
             $entityManager->persist($post);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_admin_post_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_home_page', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('admin_post/new.html.twig', [
