@@ -41,13 +41,13 @@
                 value="{{ csrf_token('authenticate') }}">
             </div>
 
+            <button class="btn" type="submit">
+                login
+            </button>
 
         </form>
         <div class="btns">
-        <button class="btn" type="submit">
-            login
-        </button>
-        <a class="btn-sign" type="submit" href="{{ path('app_register') }}">
+        <a class="btn-sign" href="{{ path('app_register') }}">
             sign in
         </a>
         </div>
